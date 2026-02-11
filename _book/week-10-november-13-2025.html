@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 10: November 13 2025 | INF2167: R For Data Science – In Class Coding Demonstrations</title>
+  <meta name="description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 10: November 13 2025 | INF2167: R For Data Science – In Class Coding Demonstrations" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 10: November 13 2025 | INF2167: R For Data Science – In Class Coding Demonstrations" />
+  
+  <meta name="twitter:description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-9-november-6-2025.html"/>
+<link rel="next" href="week-11-november-20-2025.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">INF2167 - Fall 2025</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html"><i class="fa fa-check"></i>Week 1: September 2 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#intro-to-markdown"><i class="fa fa-check"></i>Intro to Markdown</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#two-hashtags-makes-a-level-2-header"><i class="fa fa-check"></i>Two Hashtags Makes a Level 2 header</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#three-hashtags-makes-a-level-3-header"><i class="fa fa-check"></i>Three Hashtags Makes a Level 3 header</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#intro-to-using-r-code"><i class="fa fa-check"></i>Intro to Using R Code</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#object-oriented-programming"><i class="fa fa-check"></i>Object Oriented Programming</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#lists-of-values-vectors"><i class="fa fa-check"></i>Lists of Values (Vectors)</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#functions-in-r"><i class="fa fa-check"></i>Functions in R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html"><i class="fa fa-check"></i>Week 2: September 11 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#packages-in-r"><i class="fa fa-check"></i>Packages in R</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#example-generating-ficticous-data"><i class="fa fa-check"></i>Example: Generating Ficticous Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#compute-correlations"><i class="fa fa-check"></i>Compute Correlations</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#option-1-cor.test"><i class="fa fa-check"></i>Option #1: <code>cor.test</code></a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#option-2-cor"><i class="fa fa-check"></i>Option #2: <code>cor()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#a-picture-is-worth-1000-words"><i class="fa fa-check"></i>A Picture is Worth 1000 Words</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#construct-a-linear-model"><i class="fa fa-check"></i>Construct a Linear Model</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#tidy-outputs"><i class="fa fa-check"></i>Tidy Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html"><i class="fa fa-check"></i>Week 3: September 18 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#todays-topic-intro-to-multiple-regression"><i class="fa fa-check"></i>Today’s Topic: Intro to Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#the-mtcars-dataset"><i class="fa fa-check"></i>The <code>mtcars</code> Dataset</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#recall-simple-regression"><i class="fa fa-check"></i>Recall: Simple Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#multiple-regression"><i class="fa fa-check"></i>Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#control-for-other-variables"><i class="fa fa-check"></i>1. Control for Other Variables</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#investigate-the-influence-of-moderators"><i class="fa fa-check"></i>2. Investigate the Influence of Moderators</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-september-25-2025.html"><a href="week-4-september-25-2025.html"><i class="fa fa-check"></i>Week 4: September 25 2025</a></li>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html"><i class="fa fa-check"></i>Week 5: October 2 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#todays-topic-bootstraping"><i class="fa fa-check"></i>Today’s Topic: Bootstraping</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#example-1-bootstrapping-a-mean"><i class="fa fa-check"></i>Example #1: Bootstrapping a Mean</a></li>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#example-2-bootstrapping-a-regression-slope"><i class="fa fa-check"></i>Example #2: Bootstrapping a Regression Slope</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html"><i class="fa fa-check"></i>Week 6: October 9 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#get-data"><i class="fa fa-check"></i>Get Data</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#run-descrptives"><i class="fa fa-check"></i>Run Descrptives</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#print-data-preview"><i class="fa fa-check"></i>Print Data Preview</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#summary-statistics"><i class="fa fa-check"></i>Summary Statistics</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#data-structure"><i class="fa fa-check"></i>Data Structure</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#histograms"><i class="fa fa-check"></i>Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#check-correlations"><i class="fa fa-check"></i>Check Correlations</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#split-the-data"><i class="fa fa-check"></i>Split the Data</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#model-training"><i class="fa fa-check"></i>Model Training</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#remake-the-models-with-net_rev-as-the-dv"><i class="fa fa-check"></i>Remake the models with net_rev as the DV</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-october-16-2025.html"><a href="week-7-october-16-2025.html"><i class="fa fa-check"></i>Week 7: October 16 2025</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html"><i class="fa fa-check"></i>Week 8: October 23 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#penguins-pca-analysis"><i class="fa fa-check"></i>Penguins PCA Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#exploratory-data-analysis"><i class="fa fa-check"></i>Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#standardize-variables"><i class="fa fa-check"></i>Standardize Variables</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#make-correlation-matrix"><i class="fa fa-check"></i>Make correlation matrix:</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#run-pca"><i class="fa fa-check"></i>Run PCA</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#choose-how-many-pcs-to-retain"><i class="fa fa-check"></i>Choose How Many PCs to Retain</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#assess-loadings"><i class="fa fa-check"></i>Assess Loadings</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#plot-the-raw-data-in-pc-space"><i class="fa fa-check"></i>Plot the Raw Data in PC Space</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#summary-of-analyses"><i class="fa fa-check"></i>Summary of Analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html"><i class="fa fa-check"></i>Week 9: November 6 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#exploratory-data-analysis-1"><i class="fa fa-check"></i>Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#explore-predictors"><i class="fa fa-check"></i>Explore Predictors</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#simple-scatterplot"><i class="fa fa-check"></i>Simple Scatterplot</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compute-simple-regression"><i class="fa fa-check"></i>Compute Simple Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#multiple-regression-1"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compare-non-linear-regression"><i class="fa fa-check"></i>Compare Non-Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#quadratic-model"><i class="fa fa-check"></i>Quadratic Model</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#multiple-regression-with-a-polynomial"><i class="fa fa-check"></i>Multiple Regression with a Polynomial</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#bootstrap-the-estimates"><i class="fa fa-check"></i>Bootstrap the Estimates</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#principal-component-analysis"><i class="fa fa-check"></i>Principal Component Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#explore-via-histograms"><i class="fa fa-check"></i>Explore via Histograms</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#correlation-matrix"><i class="fa fa-check"></i>Correlation Matrix</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compute-pca"><i class="fa fa-check"></i>Compute PCA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html"><i class="fa fa-check"></i>Week 10: November 13 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#overview"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#load-data"><i class="fa fa-check"></i>Load Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#base-r-vs.-tidyverse"><i class="fa fa-check"></i>Base R vs. Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#favorite-tidyverse-functions"><i class="fa fa-check"></i>Favorite Tidyverse Functions</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#select-some-rows"><i class="fa fa-check"></i>Select Some Rows</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#group-the-data"><i class="fa fa-check"></i>Group the Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#choose-rows-based-on-a-factor"><i class="fa fa-check"></i>Choose Rows Based on a Factor</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#arrange-the-data"><i class="fa fa-check"></i>Arrange the Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#selecting-some-columns"><i class="fa fa-check"></i>Selecting Some Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#generating-new-columns"><i class="fa fa-check"></i>Generating New columns</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#select-distinct-instances"><i class="fa fa-check"></i>Select Distinct instances</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#rename-columns"><i class="fa fa-check"></i>Rename Columns</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#rearranging-columns"><i class="fa fa-check"></i>Rearranging columns</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#write-off-a-.csv-file"><i class="fa fa-check"></i>Write Off a .csv File</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#see-more-of-less-of-the-data-preview"><i class="fa fa-check"></i>See More of Less of the Data Preview</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#randomly-sample-from-the-data"><i class="fa fa-check"></i>Randomly Sample From The Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#compute-quick-descriptive-stats"><i class="fa fa-check"></i>Compute Quick Descriptive Stats</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#generate-new-categorical-columns"><i class="fa fa-check"></i>Generate New Categorical Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#data-viz"><i class="fa fa-check"></i>Data viz</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#violin-plot"><i class="fa fa-check"></i>Violin Plot</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#bar-chart"><i class="fa fa-check"></i>Bar Chart</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#boxplot"><i class="fa fa-check"></i>Boxplot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-11-november-20-2025.html"><a href="week-11-november-20-2025.html"><i class="fa fa-check"></i>Week 11: November 20 2025</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INF2167: R For Data Science – In Class Coding Demonstrations</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-10-november-13-2025" class="section level1 unnumbered hasAnchor">
+<h1>Week 10: November 13 2025<a href="week-10-november-13-2025.html#week-10-november-13-2025" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="overview" class="section level2 unnumbered hasAnchor">
+<h2>Overview<a href="week-10-november-13-2025.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The purpose of this demonstration is to show some of my favorite dplyr / tidyverse functions. I have chosen some of the functions that I use regularly during data preparation in my own work.</p>
+</div>
+<div id="load-data" class="section level2 unnumbered hasAnchor">
+<h2>Load Data<a href="week-10-november-13-2025.html#load-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I’ll demonstrate the functions using the <code>palmerpenguins</code> dataset. The penguins dataset is good to practice data wrangling because it contains some <code>NA</code> values.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="week-10-november-13-2025.html#cb189-1" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb189-2"><a href="week-10-november-13-2025.html#cb189-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb189-3"><a href="week-10-november-13-2025.html#cb189-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> penguins</span></code></pre></div>
+</div>
+<div id="base-r-vs.-tidyverse" class="section level2 unnumbered hasAnchor">
+<h2>Base R vs. Tidyverse<a href="week-10-november-13-2025.html#base-r-vs.-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In <code>tidyverse</code> syntax, multiple commands are strung together using “pipes”: <code>%&gt;%</code>. The pipe takes the result of what was generated before it, and passes that the the next function. Most things that I am showing you using <code>tidyverse</code> syntax could also be accomplished through <code>base R</code>, but that approach would involve assigning off intermediary objects. <code>tidyverse</code> is elegant in the way that it allows us to compute complex multi-step computational processes in a single step.</p>
+</div>
+<div id="favorite-tidyverse-functions" class="section level2 unnumbered hasAnchor">
+<h2>Favorite Tidyverse Functions<a href="week-10-november-13-2025.html#favorite-tidyverse-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="select-some-rows" class="section level3 unnumbered hasAnchor">
+<h3>Select Some Rows<a href="week-10-november-13-2025.html#select-some-rows" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You may want to choose only some rows of a given dataset to work with.</p>
+<p><strong>Select rows that are Gentoo penguins who have a bill length over 40mm</strong>:</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="week-10-november-13-2025.html#cb190-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb190-2"><a href="week-10-november-13-2025.html#cb190-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Gentoo&quot;</span>, bill_length_mm <span class="sc">&gt;</span> <span class="dv">40</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 123 × 8
+##    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Gentoo  Biscoe           46.1          13.2               211        4500
+##  2 Gentoo  Biscoe           50            16.3               230        5700
+##  3 Gentoo  Biscoe           48.7          14.1               210        4450
+##  4 Gentoo  Biscoe           50            15.2               218        5700
+##  5 Gentoo  Biscoe           47.6          14.5               215        5400
+##  6 Gentoo  Biscoe           46.5          13.5               210        4550
+##  7 Gentoo  Biscoe           45.4          14.6               211        4800
+##  8 Gentoo  Biscoe           46.7          15.3               219        5200
+##  9 Gentoo  Biscoe           43.3          13.4               209        4400
+## 10 Gentoo  Biscoe           46.8          15.4               215        5150
+## # ℹ 113 more rows
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<ul>
+<li><p>We see a preview of the first few rows of the data</p></li>
+<li><p>There are 113 additional rows and 2 additional columns that are not shown.</p></li>
+</ul>
+</div>
+<div id="group-the-data" class="section level3 unnumbered hasAnchor">
+<h3>Group the Data<a href="week-10-november-13-2025.html#group-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Count the number of penguins from each species</strong>:</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="week-10-november-13-2025.html#cb192-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb192-2"><a href="week-10-november-13-2025.html#cb192-2" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb192-3"><a href="week-10-november-13-2025.html#cb192-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb192-4"><a href="week-10-november-13-2025.html#cb192-4" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb192-5"><a href="week-10-november-13-2025.html#cb192-5" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   species       n
+##   &lt;fct&gt;     &lt;int&gt;
+## 1 Adelie      152
+## 2 Chinstrap    68
+## 3 Gentoo      124</code></pre>
+<ul>
+<li>There are 152 Adelie penguins, 68 Chinstrap penguins and 124 Gentoo penguins in the dataset.</li>
+</ul>
+</div>
+<div id="choose-rows-based-on-a-factor" class="section level3 unnumbered hasAnchor">
+<h3>Choose Rows Based on a Factor<a href="week-10-november-13-2025.html#choose-rows-based-on-a-factor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Select the Gentoo and Chinstrap penguins, group the data by species, and count the number of penguins from each species</strong>:</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="week-10-november-13-2025.html#cb194-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb194-2"><a href="week-10-november-13-2025.html#cb194-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Gentoo&quot;</span>,<span class="st">&quot;Chinstrap&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb194-3"><a href="week-10-november-13-2025.html#cb194-3" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb194-4"><a href="week-10-november-13-2025.html#cb194-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb194-5"><a href="week-10-november-13-2025.html#cb194-5" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb194-6"><a href="week-10-november-13-2025.html#cb194-6" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 2
+##   species       n
+##   &lt;fct&gt;     &lt;int&gt;
+## 1 Chinstrap    68
+## 2 Gentoo      124</code></pre>
+<ul>
+<li><p>Now we only see two rows, which correspond to the two penguin species that we asked for.</p></li>
+<li><p>Can be useful if you have many levels of a variable, and you are interested in seeing some specific categories.</p></li>
+</ul>
+<p><strong>Choose the rows that do not have “Adelie” in the species column, then group the data by species, then summarise the number of penguins from each species</strong>:</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="week-10-november-13-2025.html#cb196-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb196-2"><a href="week-10-november-13-2025.html#cb196-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">!=</span> <span class="st">&quot;Adelie&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb196-3"><a href="week-10-november-13-2025.html#cb196-3" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb196-4"><a href="week-10-november-13-2025.html#cb196-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb196-5"><a href="week-10-november-13-2025.html#cb196-5" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb196-6"><a href="week-10-november-13-2025.html#cb196-6" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 2
+##   species       n
+##   &lt;fct&gt;     &lt;int&gt;
+## 1 Chinstrap    68
+## 2 Gentoo      124</code></pre>
+<ul>
+<li><p>Same values as the ouptut above</p></li>
+<li><p>Selecting all the Gentoo and Chinstrap rows is the same as selecting all the rows that are not Adelie penguins!</p></li>
+</ul>
+</div>
+<div id="arrange-the-data" class="section level3 unnumbered hasAnchor">
+<h3>Arrange the Data<a href="week-10-november-13-2025.html#arrange-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Order the rows based on the values in a column</strong>:</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="week-10-november-13-2025.html#cb198-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb198-2"><a href="week-10-november-13-2025.html#cb198-2" tabindex="-1"></a>  <span class="fu">arrange</span>(body_mass_g)</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 8
+##    species   island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;     &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Chinstrap Dream              46.9          16.6               192        2700
+##  2 Adelie    Biscoe             36.5          16.6               181        2850
+##  3 Adelie    Biscoe             36.4          17.1               184        2850
+##  4 Adelie    Biscoe             34.5          18.1               187        2900
+##  5 Adelie    Dream              33.1          16.1               178        2900
+##  6 Adelie    Torgers…           38.6          17                 188        2900
+##  7 Chinstrap Dream              43.2          16.6               187        2900
+##  8 Adelie    Biscoe             37.9          18.6               193        2925
+##  9 Adelie    Dream              37.5          18.9               179        2975
+## 10 Adelie    Dream              37            16.9               185        3000
+## # ℹ 334 more rows
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<ul>
+<li>Rows arranged by penguin weights: The lightest penguin’s row is shown first.</li>
+</ul>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="week-10-november-13-2025.html#cb200-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb200-2"><a href="week-10-november-13-2025.html#cb200-2" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(body_mass_g))</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 8
+##    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Gentoo  Biscoe           49.2          15.2               221        6300
+##  2 Gentoo  Biscoe           59.6          17                 230        6050
+##  3 Gentoo  Biscoe           51.1          16.3               220        6000
+##  4 Gentoo  Biscoe           48.8          16.2               222        6000
+##  5 Gentoo  Biscoe           45.2          16.4               223        5950
+##  6 Gentoo  Biscoe           49.8          15.9               229        5950
+##  7 Gentoo  Biscoe           48.4          14.6               213        5850
+##  8 Gentoo  Biscoe           49.3          15.7               217        5850
+##  9 Gentoo  Biscoe           55.1          16                 230        5850
+## 10 Gentoo  Biscoe           49.5          16.2               229        5800
+## # ℹ 334 more rows
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<ul>
+<li><p>Rows arranged by body mass</p></li>
+<li><p>Heaviest penguin is first down to the lightest penguin.</p></li>
+</ul>
+</div>
+<div id="selecting-some-columns" class="section level3 unnumbered hasAnchor">
+<h3>Selecting Some Columns<a href="week-10-november-13-2025.html#selecting-some-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes datasets have many columns that are irrelevant to a given analysis. Sometimes it works best to select the columns that will be involved in making each analysis or chart to ensure that extraneous problems don’t create issues.</p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="week-10-november-13-2025.html#cb202-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb202-2"><a href="week-10-november-13-2025.html#cb202-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">&quot;body_mass_g&quot;</span>, <span class="st">&quot;species&quot;</span>, <span class="st">&quot;sex&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 3
+##    body_mass_g species sex   
+##          &lt;int&gt; &lt;fct&gt;   &lt;fct&gt; 
+##  1        3750 Adelie  male  
+##  2        3800 Adelie  female
+##  3        3250 Adelie  female
+##  4          NA Adelie  &lt;NA&gt;  
+##  5        3450 Adelie  female
+##  6        3650 Adelie  male  
+##  7        3625 Adelie  female
+##  8        4675 Adelie  male  
+##  9        3475 Adelie  &lt;NA&gt;  
+## 10        4250 Adelie  &lt;NA&gt;  
+## # ℹ 334 more rows</code></pre>
+<ul>
+<li>Only the columns that we asked for are the in the preview</li>
+</ul>
+</div>
+</div>
+<div id="generating-new-columns" class="section level2 unnumbered hasAnchor">
+<h2>Generating New columns<a href="week-10-november-13-2025.html#generating-new-columns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The block of code below performs the following functions:</p>
+<ul>
+<li><p>Calculate a new column called <code>body_mass_kg</code> that is the value in the <code>body_mass_g</code> column * 1000.</p></li>
+<li><p>Select the columns <code>species</code> and <code>body_mass_kg</code></p></li>
+<li><p>Group the Data by the <code>species column</code></p></li>
+<li><p>Remove rows that contain an <code>NA</code> value</p></li>
+<li><p>Calculate the number of penguins of each species and the mean and standard deviation of the body_mass_kg column for each penguin species</p></li>
+<li><p>Print the results out in a professional looking table</p></li>
+</ul>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="week-10-november-13-2025.html#cb204-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb204-2"><a href="week-10-november-13-2025.html#cb204-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">body_mass_kg =</span> body_mass_g <span class="sc">/</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb204-3"><a href="week-10-november-13-2025.html#cb204-3" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(species, body_mass_kg)) <span class="sc">%&gt;%</span></span>
+<span id="cb204-4"><a href="week-10-november-13-2025.html#cb204-4" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb204-5"><a href="week-10-november-13-2025.html#cb204-5" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb204-6"><a href="week-10-november-13-2025.html#cb204-6" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb204-7"><a href="week-10-november-13-2025.html#cb204-7" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb204-8"><a href="week-10-november-13-2025.html#cb204-8" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(body_mass_kg),</span>
+<span id="cb204-9"><a href="week-10-november-13-2025.html#cb204-9" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(body_mass_kg)</span>
+<span id="cb204-10"><a href="week-10-november-13-2025.html#cb204-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb204-11"><a href="week-10-november-13-2025.html#cb204-11" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb204-12"><a href="week-10-november-13-2025.html#cb204-12" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">round</span>(mean, <span class="at">digits =</span> <span class="dv">2</span>),</span>
+<span id="cb204-13"><a href="week-10-november-13-2025.html#cb204-13" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">round</span>(sd, <span class="at">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb204-14"><a href="week-10-november-13-2025.html#cb204-14" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb204-15"><a href="week-10-november-13-2025.html#cb204-15" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">species</th>
+<th align="right">count</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Adelie</td>
+<td align="right">151</td>
+<td align="right">3.70</td>
+<td align="right">0.46</td>
+</tr>
+<tr class="even">
+<td align="left">Chinstrap</td>
+<td align="right">68</td>
+<td align="right">3.73</td>
+<td align="right">0.38</td>
+</tr>
+<tr class="odd">
+<td align="left">Gentoo</td>
+<td align="right">123</td>
+<td align="right">5.08</td>
+<td align="right">0.50</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The mean body mass for Gentoo penguins is higher than the mean body weights for the other two species.</li>
+</ul>
+<div id="select-distinct-instances" class="section level3 unnumbered hasAnchor">
+<h3>Select Distinct instances<a href="week-10-november-13-2025.html#select-distinct-instances" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Selecting distinct instances is useful when exploring a dataset to get familiar with the levels of the variables (i.e., the names of the categories).</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="week-10-november-13-2025.html#cb205-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb205-2"><a href="week-10-november-13-2025.html#cb205-2" tabindex="-1"></a>  <span class="fu">distinct</span>(island)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 1
+##   island   
+##   &lt;fct&gt;    
+## 1 Torgersen
+## 2 Biscoe   
+## 3 Dream</code></pre>
+<ul>
+<li>There are three islands in the dataset: Torgersen, Biscoe, and Dream.</li>
+</ul>
+<p><strong>Count the number of pengins from each species measured on each island</strong>:</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="week-10-november-13-2025.html#cb207-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb207-2"><a href="week-10-november-13-2025.html#cb207-2" tabindex="-1"></a>  <span class="fu">group_by</span>(island, species) <span class="sc">%&gt;%</span></span>
+<span id="cb207-3"><a href="week-10-november-13-2025.html#cb207-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb207-4"><a href="week-10-november-13-2025.html#cb207-4" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb207-5"><a href="week-10-november-13-2025.html#cb207-5" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb207-6"><a href="week-10-november-13-2025.html#cb207-6" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">island</th>
+<th align="left">species</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Biscoe</td>
+<td align="left">Adelie</td>
+<td align="right">44</td>
+</tr>
+<tr class="even">
+<td align="left">Biscoe</td>
+<td align="left">Gentoo</td>
+<td align="right">124</td>
+</tr>
+<tr class="odd">
+<td align="left">Dream</td>
+<td align="left">Adelie</td>
+<td align="right">56</td>
+</tr>
+<tr class="even">
+<td align="left">Dream</td>
+<td align="left">Chinstrap</td>
+<td align="right">68</td>
+</tr>
+<tr class="odd">
+<td align="left">Torgersen</td>
+<td align="left">Adelie</td>
+<td align="right">52</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Adelie penguins were measured on all three islands</p></li>
+<li><p>Gentoo penguins were only measured on Biscoe island</p></li>
+<li><p>Chinstrap penguins were only measured on Dream island</p></li>
+</ul>
+</div>
+<div id="rename-columns" class="section level3 unnumbered hasAnchor">
+<h3>Rename Columns<a href="week-10-november-13-2025.html#rename-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes datasets come with long, similar, or otherwise annoying column headers. It is a good idea for the column names to be systematic, distinct, and as short as possible.</p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="week-10-november-13-2025.html#cb208-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb208-2"><a href="week-10-november-13-2025.html#cb208-2" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb208-3"><a href="week-10-november-13-2025.html#cb208-3" tabindex="-1"></a>    <span class="at">b_length =</span> bill_length_mm,</span>
+<span id="cb208-4"><a href="week-10-november-13-2025.html#cb208-4" tabindex="-1"></a>    <span class="at">b_depth =</span> bill_depth_mm,</span>
+<span id="cb208-5"><a href="week-10-november-13-2025.html#cb208-5" tabindex="-1"></a>    <span class="at">flip_length =</span> flipper_length_mm,</span>
+<span id="cb208-6"><a href="week-10-november-13-2025.html#cb208-6" tabindex="-1"></a>    <span class="at">body_mass =</span> body_mass_g</span>
+<span id="cb208-7"><a href="week-10-november-13-2025.html#cb208-7" tabindex="-1"></a>  )</span></code></pre></div>
+<ul>
+<li><p>In this case we are overwriting the data object <code>data</code>.</p></li>
+<li><p>We are overwriting <code>data</code> because we would want to save the shortened column header names for subsequent analyses.</p></li>
+</ul>
+</div>
+<div id="rearranging-columns" class="section level3 unnumbered hasAnchor">
+<h3>Rearranging columns<a href="week-10-november-13-2025.html#rearranging-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It is my preference to see identifying information first in a dataset followed by continuous measurements. The code below moves the two columns of identifying information that by default appear at the far right before the numeric variables.</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="week-10-november-13-2025.html#cb209-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb209-2"><a href="week-10-november-13-2025.html#cb209-2" tabindex="-1"></a>  <span class="fu">relocate</span>(sex, year, <span class="at">.before =</span> b_length)</span></code></pre></div>
+<ul>
+<li>Just like above, here, I am overwriting the data object so that my preferred organization is saved in the working environment.</li>
+</ul>
+</div>
+<div id="write-off-a-.csv-file" class="section level3 unnumbered hasAnchor">
+<h3>Write Off a .csv File<a href="week-10-november-13-2025.html#write-off-a-.csv-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes it is useful to save off a hard copy of a dataset or a summary that you’ve created in R. The cow below generates summary statistics split by all the demographic variabless, then saves off a .csv file.</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="week-10-november-13-2025.html#cb210-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb210-2"><a href="week-10-november-13-2025.html#cb210-2" tabindex="-1"></a>  <span class="fu">group_by</span>(year, island, species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb210-3"><a href="week-10-november-13-2025.html#cb210-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb210-4"><a href="week-10-november-13-2025.html#cb210-4" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb210-5"><a href="week-10-november-13-2025.html#cb210-5" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb210-6"><a href="week-10-november-13-2025.html#cb210-6" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">&quot;summary.csv&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="see-more-of-less-of-the-data-preview" class="section level2 unnumbered hasAnchor">
+<h2>See More of Less of the Data Preview<a href="week-10-november-13-2025.html#see-more-of-less-of-the-data-preview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Much of the time that you work with tidyverse codeblocks, you may want to see more or less of the output in the data preview. The code below alters the length of the data preview.</p>
+<p><strong>Show me the first 15 rows</strong>:</p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="week-10-november-13-2025.html#cb211-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb211-2"><a href="week-10-november-13-2025.html#cb211-2" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">15</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 15 × 8
+##    species island    sex     year b_length b_depth flip_length body_mass
+##    &lt;fct&gt;   &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;    &lt;dbl&gt;   &lt;dbl&gt;       &lt;int&gt;     &lt;int&gt;
+##  1 Adelie  Torgersen male    2007     39.1    18.7         181      3750
+##  2 Adelie  Torgersen female  2007     39.5    17.4         186      3800
+##  3 Adelie  Torgersen female  2007     40.3    18           195      3250
+##  4 Adelie  Torgersen &lt;NA&gt;    2007     NA      NA            NA        NA
+##  5 Adelie  Torgersen female  2007     36.7    19.3         193      3450
+##  6 Adelie  Torgersen male    2007     39.3    20.6         190      3650
+##  7 Adelie  Torgersen female  2007     38.9    17.8         181      3625
+##  8 Adelie  Torgersen male    2007     39.2    19.6         195      4675
+##  9 Adelie  Torgersen &lt;NA&gt;    2007     34.1    18.1         193      3475
+## 10 Adelie  Torgersen &lt;NA&gt;    2007     42      20.2         190      4250
+## 11 Adelie  Torgersen &lt;NA&gt;    2007     37.8    17.1         186      3300
+## 12 Adelie  Torgersen &lt;NA&gt;    2007     37.8    17.3         180      3700
+## 13 Adelie  Torgersen female  2007     41.1    17.6         182      3200
+## 14 Adelie  Torgersen male    2007     38.6    21.2         191      3800
+## 15 Adelie  Torgersen male    2007     34.6    21.1         198      4400</code></pre>
+<p><strong>Show me the lightest penguin in the dataset</strong>:</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="week-10-november-13-2025.html#cb213-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb213-2"><a href="week-10-november-13-2025.html#cb213-2" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb213-3"><a href="week-10-november-13-2025.html#cb213-3" tabindex="-1"></a>  <span class="fu">arrange</span>(body_mass) <span class="sc">%&gt;%</span></span>
+<span id="cb213-4"><a href="week-10-november-13-2025.html#cb213-4" tabindex="-1"></a>  <span class="fu">slice_tail</span>(<span class="at">n =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 8
+##   species island sex    year b_length b_depth flip_length body_mass
+##   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;int&gt;    &lt;dbl&gt;   &lt;dbl&gt;       &lt;int&gt;     &lt;int&gt;
+## 1 Gentoo  Biscoe male   2007     49.2    15.2         221      6300</code></pre>
+<p><strong>Show me the 10 lightest penguins in the dataset</strong>:</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="week-10-november-13-2025.html#cb215-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb215-2"><a href="week-10-november-13-2025.html#cb215-2" tabindex="-1"></a>  <span class="fu">slice_min</span>(body_mass, <span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 11 × 8
+##    species   island    sex     year b_length b_depth flip_length body_mass
+##    &lt;fct&gt;     &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;    &lt;dbl&gt;   &lt;dbl&gt;       &lt;int&gt;     &lt;int&gt;
+##  1 Chinstrap Dream     female  2008     46.9    16.6         192      2700
+##  2 Adelie    Biscoe    female  2008     36.5    16.6         181      2850
+##  3 Adelie    Biscoe    female  2008     36.4    17.1         184      2850
+##  4 Adelie    Biscoe    female  2008     34.5    18.1         187      2900
+##  5 Adelie    Dream     female  2008     33.1    16.1         178      2900
+##  6 Adelie    Torgersen female  2009     38.6    17           188      2900
+##  7 Chinstrap Dream     female  2007     43.2    16.6         187      2900
+##  8 Adelie    Biscoe    female  2009     37.9    18.6         193      2925
+##  9 Adelie    Dream     &lt;NA&gt;    2007     37.5    18.9         179      2975
+## 10 Adelie    Dream     female  2007     37      16.9         185      3000
+## 11 Adelie    Dream     female  2009     37.3    16.8         192      3000</code></pre>
+<p><strong>Show me the 10 heaviest penguins</strong>:</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="week-10-november-13-2025.html#cb217-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb217-2"><a href="week-10-november-13-2025.html#cb217-2" tabindex="-1"></a>  <span class="fu">slice_max</span>(body_mass, <span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 11 × 8
+##    species island sex    year b_length b_depth flip_length body_mass
+##    &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;int&gt;    &lt;dbl&gt;   &lt;dbl&gt;       &lt;int&gt;     &lt;int&gt;
+##  1 Gentoo  Biscoe male   2007     49.2    15.2         221      6300
+##  2 Gentoo  Biscoe male   2007     59.6    17           230      6050
+##  3 Gentoo  Biscoe male   2008     51.1    16.3         220      6000
+##  4 Gentoo  Biscoe male   2009     48.8    16.2         222      6000
+##  5 Gentoo  Biscoe male   2008     45.2    16.4         223      5950
+##  6 Gentoo  Biscoe male   2009     49.8    15.9         229      5950
+##  7 Gentoo  Biscoe male   2007     48.4    14.6         213      5850
+##  8 Gentoo  Biscoe male   2007     49.3    15.7         217      5850
+##  9 Gentoo  Biscoe male   2009     55.1    16           230      5850
+## 10 Gentoo  Biscoe male   2008     49.5    16.2         229      5800
+## 11 Gentoo  Biscoe male   2008     48.6    16           230      5800</code></pre>
+<p><strong>Show me the 5 heaviest penguins from each species</strong>:</p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="week-10-november-13-2025.html#cb219-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb219-2"><a href="week-10-november-13-2025.html#cb219-2" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb219-3"><a href="week-10-november-13-2025.html#cb219-3" tabindex="-1"></a>  <span class="fu">slice_max</span>(body_mass, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 16 × 8
+## # Groups:   species [3]
+##    species   island    sex    year b_length b_depth flip_length body_mass
+##    &lt;fct&gt;     &lt;fct&gt;     &lt;fct&gt; &lt;int&gt;    &lt;dbl&gt;   &lt;dbl&gt;       &lt;int&gt;     &lt;int&gt;
+##  1 Adelie    Biscoe    male   2009     43.2    19           197      4775
+##  2 Adelie    Biscoe    male   2009     41      20           203      4725
+##  3 Adelie    Torgersen male   2008     42.9    17.6         196      4700
+##  4 Adelie    Torgersen male   2007     39.2    19.6         195      4675
+##  5 Adelie    Dream     male   2007     39.8    19.1         184      4650
+##  6 Chinstrap Dream     male   2008     52      20.7         210      4800
+##  7 Chinstrap Dream     male   2008     52.8    20           205      4550
+##  8 Chinstrap Dream     male   2008     53.5    19.9         205      4500
+##  9 Chinstrap Dream     male   2009     50.8    18.5         201      4450
+## 10 Chinstrap Dream     male   2007     49.2    18.2         195      4400
+## 11 Gentoo    Biscoe    male   2007     49.2    15.2         221      6300
+## 12 Gentoo    Biscoe    male   2007     59.6    17           230      6050
+## 13 Gentoo    Biscoe    male   2008     51.1    16.3         220      6000
+## 14 Gentoo    Biscoe    male   2009     48.8    16.2         222      6000
+## 15 Gentoo    Biscoe    male   2008     45.2    16.4         223      5950
+## 16 Gentoo    Biscoe    male   2009     49.8    15.9         229      5950</code></pre>
+<div id="randomly-sample-from-the-data" class="section level3 unnumbered hasAnchor">
+<h3>Randomly Sample From The Data<a href="week-10-november-13-2025.html#randomly-sample-from-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are instances where it is helpful to select a random sample of rows. This is especially useful to check other computational processes.</p>
+<p><strong>Sample 20 random rows from the data</strong>:</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="week-10-november-13-2025.html#cb221-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb221-2"><a href="week-10-november-13-2025.html#cb221-2" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">20</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 20 × 8
+##    species   island    sex     year b_length b_depth flip_length body_mass
+##    &lt;fct&gt;     &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;    &lt;dbl&gt;   &lt;dbl&gt;       &lt;int&gt;     &lt;int&gt;
+##  1 Adelie    Dream     male    2009     40.7    17           190      3725
+##  2 Chinstrap Dream     male    2007     50.5    19.6         201      4050
+##  3 Gentoo    Biscoe    male    2009     48.8    16.2         222      6000
+##  4 Adelie    Dream     female  2009     37      16.5         185      3400
+##  5 Gentoo    Biscoe    female  2008     45.7    13.9         214      4400
+##  6 Gentoo    Biscoe    male    2008     45      15.4         220      5050
+##  7 Adelie    Biscoe    female  2008     39      17.5         186      3550
+##  8 Gentoo    Biscoe    male    2009     50.4    15.7         222      5750
+##  9 Adelie    Torgersen male    2007     39.3    20.6         190      3650
+## 10 Chinstrap Dream     female  2009     50.9    17.9         196      3675
+## 11 Gentoo    Biscoe    female  2008     45.5    13.9         210      4200
+## 12 Adelie    Dream     female  2007     39.5    16.7         178      3250
+## 13 Adelie    Dream     female  2008     36.9    18.6         189      3500
+## 14 Adelie    Biscoe    male    2008     41.6    18           192      3950
+## 15 Chinstrap Dream     female  2007     45.9    17.1         190      3575
+## 16 Adelie    Torgersen male    2008     42.1    19.1         195      4000
+## 17 Chinstrap Dream     male    2009     50.8    18.5         201      4450
+## 18 Adelie    Biscoe    female  2009     38.1    17           181      3175
+## 19 Gentoo    Biscoe    male    2008     46.4    15.6         221      5000
+## 20 Gentoo    Biscoe    female  2008     45.3    13.8         208      4200</code></pre>
+<p><strong>Samples a random 10% of the rows</strong>:</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="week-10-november-13-2025.html#cb223-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb223-2"><a href="week-10-november-13-2025.html#cb223-2" tabindex="-1"></a>  <span class="fu">sample_frac</span>(<span class="fl">0.01</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 8
+##   species   island sex    year b_length b_depth flip_length body_mass
+##   &lt;fct&gt;     &lt;fct&gt;  &lt;fct&gt; &lt;int&gt;    &lt;dbl&gt;   &lt;dbl&gt;       &lt;int&gt;     &lt;int&gt;
+## 1 Adelie    Dream  male   2009     39.2    18.6         190      4250
+## 2 Chinstrap Dream  male   2009     49.3    19.9         203      4050
+## 3 Adelie    Dream  male   2009     40.6    17.2         187      3475</code></pre>
+<ul>
+<li>There are 3 rows of data in the preview because 1% of 334 is ~3.</li>
+</ul>
+</div>
+<div id="compute-quick-descriptive-stats" class="section level3 unnumbered hasAnchor">
+<h3>Compute Quick Descriptive Stats<a href="week-10-november-13-2025.html#compute-quick-descriptive-stats" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If there are <code>NA</code> values in quantitative columns that you want to summarize, you must first remove he NA values.</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="week-10-november-13-2025.html#cb225-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb225-2"><a href="week-10-november-13-2025.html#cb225-2" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb225-3"><a href="week-10-november-13-2025.html#cb225-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">median =</span> <span class="fu">median</span>(body_mass))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 1
+##   median
+##    &lt;int&gt;
+## 1   4050</code></pre>
+<ul>
+<li>The median body mass in the whole dataset is 4050g.</li>
+</ul>
+</div>
+<div id="generate-new-categorical-columns" class="section level3 unnumbered hasAnchor">
+<h3>Generate New Categorical Columns<a href="week-10-november-13-2025.html#generate-new-categorical-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It is sometimes useful to calculate new variables that combine multiple levels from another variable. The code below makes a new column named “heavy”. Penguins that are under 4050g will be assigned the label “light” and penguins that are over the median weight of 4050g will be labeled as “heavy”. Any rows that have missing data in the <code>body_mass</code> column will be labeled as “unknown”.</p>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="week-10-november-13-2025.html#cb227-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb227-2"><a href="week-10-november-13-2025.html#cb227-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">heavy =</span> <span class="fu">if_else</span>(body_mass <span class="sc">&gt;</span> <span class="dv">4050</span>, <span class="st">&quot;heavy&quot;</span>, <span class="st">&quot;light&quot;</span>, <span class="at">missing =</span> <span class="st">&quot;unknown&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb227-3"><a href="week-10-november-13-2025.html#cb227-3" tabindex="-1"></a>  <span class="fu">group_by</span>(species, heavy) <span class="sc">%&gt;%</span></span>
+<span id="cb227-4"><a href="week-10-november-13-2025.html#cb227-4" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb227-5"><a href="week-10-november-13-2025.html#cb227-5" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">species</th>
+<th align="left">heavy</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Adelie</td>
+<td align="left">heavy</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="left">Adelie</td>
+<td align="left">light</td>
+<td align="right">118</td>
+</tr>
+<tr class="odd">
+<td align="left">Adelie</td>
+<td align="left">unknown</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Chinstrap</td>
+<td align="left">heavy</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="left">Chinstrap</td>
+<td align="left">light</td>
+<td align="right">57</td>
+</tr>
+<tr class="even">
+<td align="left">Gentoo</td>
+<td align="left">heavy</td>
+<td align="right">122</td>
+</tr>
+<tr class="odd">
+<td align="left">Gentoo</td>
+<td align="left">light</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Gentoo</td>
+<td align="left">unknown</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Generate a new column called “heavy_3”, with 3 levels based on body mass</strong>:</p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="week-10-november-13-2025.html#cb228-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb228-2"><a href="week-10-november-13-2025.html#cb228-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">heavy_3 =</span> <span class="fu">case_when</span>(</span>
+<span id="cb228-3"><a href="week-10-november-13-2025.html#cb228-3" tabindex="-1"></a>    body_mass <span class="sc">&lt;</span> <span class="dv">3500</span> <span class="sc">~</span> <span class="st">&quot;light&quot;</span>,</span>
+<span id="cb228-4"><a href="week-10-november-13-2025.html#cb228-4" tabindex="-1"></a>    body_mass <span class="sc">&gt;=</span> <span class="dv">3500</span> <span class="sc">&amp;</span> body_mass <span class="sc">&lt;</span> <span class="dv">4500</span> <span class="sc">~</span> <span class="st">&quot;medium&quot;</span>,</span>
+<span id="cb228-5"><a href="week-10-november-13-2025.html#cb228-5" tabindex="-1"></a>    body_mass <span class="sc">&gt;</span> <span class="dv">4500</span> <span class="sc">~</span> <span class="st">&quot;hefty&quot;</span></span>
+<span id="cb228-6"><a href="week-10-november-13-2025.html#cb228-6" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb228-7"><a href="week-10-november-13-2025.html#cb228-7" tabindex="-1"></a>  <span class="fu">group_by</span>(species, heavy_3) <span class="sc">%&gt;%</span></span>
+<span id="cb228-8"><a href="week-10-november-13-2025.html#cb228-8" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb228-9"><a href="week-10-november-13-2025.html#cb228-9" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb228-10"><a href="week-10-november-13-2025.html#cb228-10" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">species</th>
+<th align="left">heavy_3</th>
+<th align="right">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Adelie</td>
+<td align="left">hefty</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">Adelie</td>
+<td align="left">light</td>
+<td align="right">54</td>
+</tr>
+<tr class="odd">
+<td align="left">Adelie</td>
+<td align="left">medium</td>
+<td align="right">89</td>
+</tr>
+<tr class="even">
+<td align="left">Chinstrap</td>
+<td align="left">hefty</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Chinstrap</td>
+<td align="left">light</td>
+<td align="right">17</td>
+</tr>
+<tr class="even">
+<td align="left">Chinstrap</td>
+<td align="left">medium</td>
+<td align="right">48</td>
+</tr>
+<tr class="odd">
+<td align="left">Gentoo</td>
+<td align="left">hefty</td>
+<td align="right">106</td>
+</tr>
+<tr class="even">
+<td align="left">Gentoo</td>
+<td align="left">medium</td>
+<td align="right">16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="data-viz" class="section level2 unnumbered hasAnchor">
+<h2>Data viz<a href="week-10-november-13-2025.html#data-viz" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this course, we’ve made lots of scatterplots and assessed lines of best fit that capture variance in continuous relationships. There is also value in grouping the data and looking at descriptive statistics (e.g., Range, mean, spread of the scores) within each group. Below I will show three diverent versions of presenting group-based descriptive information using charts.</p>
+<div id="violin-plot" class="section level3 unnumbered hasAnchor">
+<h3>Violin Plot<a href="week-10-november-13-2025.html#violin-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The code below generates a violin plot showing the distributions of body mass for each species of penguin.</p>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="week-10-november-13-2025.html#cb229-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb229-2"><a href="week-10-november-13-2025.html#cb229-2" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb229-3"><a href="week-10-november-13-2025.html#cb229-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass, <span class="at">colour =</span> species, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb229-4"><a href="week-10-november-13-2025.html#cb229-4" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb229-5"><a href="week-10-november-13-2025.html#cb229-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb229-6"><a href="week-10-november-13-2025.html#cb229-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb229-7"><a href="week-10-november-13-2025.html#cb229-7" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb229-8"><a href="week-10-november-13-2025.html#cb229-8" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Species of Penguins&quot;</span>,</span>
+<span id="cb229-9"><a href="week-10-november-13-2025.html#cb229-9" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Body Mass (g)&quot;</span></span>
+<span id="cb229-10"><a href="week-10-november-13-2025.html#cb229-10" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-138-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<ul>
+<li><p>The violin plot provides qualitative information about the spread of scores in each group, which is communicated by the shape of the “violins”.</p></li>
+<li><p>Each violin is the distribution of scores plotted vertically and mirrored.</p></li>
+</ul>
+</div>
+<div id="bar-chart" class="section level3 unnumbered hasAnchor">
+<h3>Bar Chart<a href="week-10-november-13-2025.html#bar-chart" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Some people are partial to seeing a bar chart depicting mean values plus or minus an index of spread of the scores. The computation that is used as the error bars is field-specfic: Some fields us standard deviation, others use standard error of the mean, and there are some that use the 95% confidence interval. Since the error bars do not always represent the same thing, it is useful to provide information about what the error bars represent in the figure caption. Using the standard error of the mean is the norm in my field, so I will show it below.</p>
+<ul>
+<li>Rstudio does not have a built in formula to compute SEM, so I will compute it myself by entering the formula</li>
+</ul>
+<p><span class="math display">\[se = \dfrac{sd}{\sqrt{n}}\]</span></p>
+<ul>
+<li>The standard error is equal to the standard deviation within a group divided by the square root of the number of scores in that group.</li>
+</ul>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="week-10-november-13-2025.html#cb230-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb230-2"><a href="week-10-november-13-2025.html#cb230-2" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb230-3"><a href="week-10-november-13-2025.html#cb230-3" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb230-4"><a href="week-10-november-13-2025.html#cb230-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb230-5"><a href="week-10-november-13-2025.html#cb230-5" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb230-6"><a href="week-10-november-13-2025.html#cb230-6" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(body_mass),</span>
+<span id="cb230-7"><a href="week-10-november-13-2025.html#cb230-7" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(body_mass),</span>
+<span id="cb230-8"><a href="week-10-november-13-2025.html#cb230-8" tabindex="-1"></a>    <span class="at">se =</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
+<span id="cb230-9"><a href="week-10-november-13-2025.html#cb230-9" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb230-10"><a href="week-10-november-13-2025.html#cb230-10" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> mean, <span class="at">colour =</span> species, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb230-11"><a href="week-10-november-13-2025.html#cb230-11" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb230-12"><a href="week-10-november-13-2025.html#cb230-12" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">ymin =</span> mean <span class="sc">-</span> se, <span class="at">ymax =</span> mean <span class="sc">+</span> se), <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb230-13"><a href="week-10-november-13-2025.html#cb230-13" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass), <span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb230-14"><a href="week-10-november-13-2025.html#cb230-14" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb230-15"><a href="week-10-november-13-2025.html#cb230-15" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb230-16"><a href="week-10-november-13-2025.html#cb230-16" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb230-17"><a href="week-10-november-13-2025.html#cb230-17" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb230-18"><a href="week-10-november-13-2025.html#cb230-18" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Species of Penguins&quot;</span>,</span>
+<span id="cb230-19"><a href="week-10-november-13-2025.html#cb230-19" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Body Mass (g)&quot;</span></span>
+<span id="cb230-20"><a href="week-10-november-13-2025.html#cb230-20" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-139"></span>
+<img src="_main_files/figure-html/unnamed-chunk-139-1.png" alt="Figure caption: Average body weights for each penguin species. Data plotted as mean value +/- SEM." width="60%" />
+<p class="caption">
+Figure 1: Figure caption: Average body weights for each penguin species. Data plotted as mean value +/- SEM.
+</p>
+</div>
+<ul>
+<li><p>In the code above, I first computed the mean and se for each group, then piped that information directly to <code>ggplot</code></p></li>
+<li><p>I also added <code>geom_jitter()</code> which shows the individual datapoints overlain on top of the bars.</p></li>
+</ul>
+</div>
+<div id="boxplot" class="section level3 unnumbered hasAnchor">
+<h3>Boxplot<a href="week-10-november-13-2025.html#boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Some people like to use boxplots to showcase descriptive information about scores.</p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="week-10-november-13-2025.html#cb231-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb231-2"><a href="week-10-november-13-2025.html#cb231-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass, <span class="at">colour =</span> species, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb231-3"><a href="week-10-november-13-2025.html#cb231-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb231-4"><a href="week-10-november-13-2025.html#cb231-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb231-5"><a href="week-10-november-13-2025.html#cb231-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb231-6"><a href="week-10-november-13-2025.html#cb231-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb231-7"><a href="week-10-november-13-2025.html#cb231-7" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb231-8"><a href="week-10-november-13-2025.html#cb231-8" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Species of Penguins&quot;</span>,</span>
+<span id="cb231-9"><a href="week-10-november-13-2025.html#cb231-9" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Body Mass (g)&quot;</span></span>
+<span id="cb231-10"><a href="week-10-november-13-2025.html#cb231-10" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-140-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<ul>
+<li><p>The horizonal centeral line on each bar represents the group’s median score.</p></li>
+<li><p>the box represents the inter-quartile range. 50% of each group’s scores fall in this range.</p></li>
+<li><p>The “wiskers” (error bars) represent the range</p></li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-9-november-6-2025.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-11-november-20-2025.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/10-Nov13.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

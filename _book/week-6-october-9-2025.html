@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 6: October 9 2025 | INF2167: R For Data Science – In Class Coding Demonstrations</title>
+  <meta name="description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 6: October 9 2025 | INF2167: R For Data Science – In Class Coding Demonstrations" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 6: October 9 2025 | INF2167: R For Data Science – In Class Coding Demonstrations" />
+  
+  <meta name="twitter:description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-5-october-2-2025.html"/>
+<link rel="next" href="week-7-october-16-2025.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">INF2167 - Fall 2025</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html"><i class="fa fa-check"></i>Week 1: September 2 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#intro-to-markdown"><i class="fa fa-check"></i>Intro to Markdown</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#two-hashtags-makes-a-level-2-header"><i class="fa fa-check"></i>Two Hashtags Makes a Level 2 header</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#three-hashtags-makes-a-level-3-header"><i class="fa fa-check"></i>Three Hashtags Makes a Level 3 header</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#intro-to-using-r-code"><i class="fa fa-check"></i>Intro to Using R Code</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#object-oriented-programming"><i class="fa fa-check"></i>Object Oriented Programming</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#lists-of-values-vectors"><i class="fa fa-check"></i>Lists of Values (Vectors)</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#functions-in-r"><i class="fa fa-check"></i>Functions in R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html"><i class="fa fa-check"></i>Week 2: September 11 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#packages-in-r"><i class="fa fa-check"></i>Packages in R</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#example-generating-ficticous-data"><i class="fa fa-check"></i>Example: Generating Ficticous Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#compute-correlations"><i class="fa fa-check"></i>Compute Correlations</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#option-1-cor.test"><i class="fa fa-check"></i>Option #1: <code>cor.test</code></a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#option-2-cor"><i class="fa fa-check"></i>Option #2: <code>cor()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#a-picture-is-worth-1000-words"><i class="fa fa-check"></i>A Picture is Worth 1000 Words</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#construct-a-linear-model"><i class="fa fa-check"></i>Construct a Linear Model</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#tidy-outputs"><i class="fa fa-check"></i>Tidy Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html"><i class="fa fa-check"></i>Week 3: September 18 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#todays-topic-intro-to-multiple-regression"><i class="fa fa-check"></i>Today’s Topic: Intro to Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#the-mtcars-dataset"><i class="fa fa-check"></i>The <code>mtcars</code> Dataset</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#recall-simple-regression"><i class="fa fa-check"></i>Recall: Simple Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#multiple-regression"><i class="fa fa-check"></i>Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#control-for-other-variables"><i class="fa fa-check"></i>1. Control for Other Variables</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#investigate-the-influence-of-moderators"><i class="fa fa-check"></i>2. Investigate the Influence of Moderators</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-september-25-2025.html"><a href="week-4-september-25-2025.html"><i class="fa fa-check"></i>Week 4: September 25 2025</a></li>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html"><i class="fa fa-check"></i>Week 5: October 2 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#todays-topic-bootstraping"><i class="fa fa-check"></i>Today’s Topic: Bootstraping</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#example-1-bootstrapping-a-mean"><i class="fa fa-check"></i>Example #1: Bootstrapping a Mean</a></li>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#example-2-bootstrapping-a-regression-slope"><i class="fa fa-check"></i>Example #2: Bootstrapping a Regression Slope</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html"><i class="fa fa-check"></i>Week 6: October 9 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#get-data"><i class="fa fa-check"></i>Get Data</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#run-descrptives"><i class="fa fa-check"></i>Run Descrptives</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#print-data-preview"><i class="fa fa-check"></i>Print Data Preview</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#summary-statistics"><i class="fa fa-check"></i>Summary Statistics</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#data-structure"><i class="fa fa-check"></i>Data Structure</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#histograms"><i class="fa fa-check"></i>Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#check-correlations"><i class="fa fa-check"></i>Check Correlations</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#split-the-data"><i class="fa fa-check"></i>Split the Data</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#model-training"><i class="fa fa-check"></i>Model Training</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#remake-the-models-with-net_rev-as-the-dv"><i class="fa fa-check"></i>Remake the models with net_rev as the DV</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-october-16-2025.html"><a href="week-7-october-16-2025.html"><i class="fa fa-check"></i>Week 7: October 16 2025</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html"><i class="fa fa-check"></i>Week 8: October 23 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#penguins-pca-analysis"><i class="fa fa-check"></i>Penguins PCA Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#exploratory-data-analysis"><i class="fa fa-check"></i>Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#standardize-variables"><i class="fa fa-check"></i>Standardize Variables</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#make-correlation-matrix"><i class="fa fa-check"></i>Make correlation matrix:</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#run-pca"><i class="fa fa-check"></i>Run PCA</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#choose-how-many-pcs-to-retain"><i class="fa fa-check"></i>Choose How Many PCs to Retain</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#assess-loadings"><i class="fa fa-check"></i>Assess Loadings</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#plot-the-raw-data-in-pc-space"><i class="fa fa-check"></i>Plot the Raw Data in PC Space</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#summary-of-analyses"><i class="fa fa-check"></i>Summary of Analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html"><i class="fa fa-check"></i>Week 9: November 6 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#exploratory-data-analysis-1"><i class="fa fa-check"></i>Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#explore-predictors"><i class="fa fa-check"></i>Explore Predictors</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#simple-scatterplot"><i class="fa fa-check"></i>Simple Scatterplot</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compute-simple-regression"><i class="fa fa-check"></i>Compute Simple Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#multiple-regression-1"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compare-non-linear-regression"><i class="fa fa-check"></i>Compare Non-Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#quadratic-model"><i class="fa fa-check"></i>Quadratic Model</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#multiple-regression-with-a-polynomial"><i class="fa fa-check"></i>Multiple Regression with a Polynomial</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#bootstrap-the-estimates"><i class="fa fa-check"></i>Bootstrap the Estimates</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#principal-component-analysis"><i class="fa fa-check"></i>Principal Component Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#explore-via-histograms"><i class="fa fa-check"></i>Explore via Histograms</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#correlation-matrix"><i class="fa fa-check"></i>Correlation Matrix</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compute-pca"><i class="fa fa-check"></i>Compute PCA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html"><i class="fa fa-check"></i>Week 10: November 13 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#overview"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#load-data"><i class="fa fa-check"></i>Load Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#base-r-vs.-tidyverse"><i class="fa fa-check"></i>Base R vs. Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#favorite-tidyverse-functions"><i class="fa fa-check"></i>Favorite Tidyverse Functions</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#select-some-rows"><i class="fa fa-check"></i>Select Some Rows</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#group-the-data"><i class="fa fa-check"></i>Group the Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#choose-rows-based-on-a-factor"><i class="fa fa-check"></i>Choose Rows Based on a Factor</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#arrange-the-data"><i class="fa fa-check"></i>Arrange the Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#selecting-some-columns"><i class="fa fa-check"></i>Selecting Some Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#generating-new-columns"><i class="fa fa-check"></i>Generating New columns</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#select-distinct-instances"><i class="fa fa-check"></i>Select Distinct instances</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#rename-columns"><i class="fa fa-check"></i>Rename Columns</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#rearranging-columns"><i class="fa fa-check"></i>Rearranging columns</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#write-off-a-.csv-file"><i class="fa fa-check"></i>Write Off a .csv File</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#see-more-of-less-of-the-data-preview"><i class="fa fa-check"></i>See More of Less of the Data Preview</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#randomly-sample-from-the-data"><i class="fa fa-check"></i>Randomly Sample From The Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#compute-quick-descriptive-stats"><i class="fa fa-check"></i>Compute Quick Descriptive Stats</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#generate-new-categorical-columns"><i class="fa fa-check"></i>Generate New Categorical Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#data-viz"><i class="fa fa-check"></i>Data viz</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#violin-plot"><i class="fa fa-check"></i>Violin Plot</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#bar-chart"><i class="fa fa-check"></i>Bar Chart</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#boxplot"><i class="fa fa-check"></i>Boxplot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-11-november-20-2025.html"><a href="week-11-november-20-2025.html"><i class="fa fa-check"></i>Week 11: November 20 2025</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INF2167: R For Data Science – In Class Coding Demonstrations</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-6-october-9-2025" class="section level1 unnumbered hasAnchor">
+<h1>Week 6: October 9 2025<a href="week-6-october-9-2025.html#week-6-october-9-2025" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="get-data" class="section level2 unnumbered hasAnchor">
+<h2>Get Data<a href="week-6-october-9-2025.html#get-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Read in the datafile that I posted on Quercus under the “Lecture_6” slides. These are ficticious data about how one specific product listed on Amazon sells. I’ve also included a seperate “codebook” file for your convenience, which provides descriptions of each column in the data.csv file.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="week-6-october-9-2025.html#cb88-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="run-descrptives" class="section level2 unnumbered hasAnchor">
+<h2>Run Descrptives<a href="week-6-october-9-2025.html#run-descrptives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before jumping in to model generation, it may be a good idea to run a few quick commands to check out the dataset:</p>
+<div id="print-data-preview" class="section level3 unnumbered hasAnchor">
+<h3>Print Data Preview<a href="week-6-october-9-2025.html#print-data-preview" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="week-6-october-9-2025.html#cb89-1" tabindex="-1"></a><span class="co"># Show me the first 6 rows of data</span></span>
+<span id="cb89-2"><a href="week-6-october-9-2025.html#cb89-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(dat))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">sales</th>
+<th align="right">price</th>
+<th align="right">marketing</th>
+<th align="right">competitor_price</th>
+<th align="right">traffic</th>
+<th align="left">season</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">703</td>
+<td align="right">10.25</td>
+<td align="right">7.945</td>
+<td align="right">9.70</td>
+<td align="right">2898</td>
+<td align="left">Q1</td>
+</tr>
+<tr class="even">
+<td align="right">547</td>
+<td align="right">11.00</td>
+<td align="right">10.396</td>
+<td align="right">10.51</td>
+<td align="right">2320</td>
+<td align="left">Q1</td>
+</tr>
+<tr class="odd">
+<td align="right">678</td>
+<td align="right">11.41</td>
+<td align="right">9.528</td>
+<td align="right">11.19</td>
+<td align="right">2597</td>
+<td align="left">Q1</td>
+</tr>
+<tr class="even">
+<td align="right">483</td>
+<td align="right">11.38</td>
+<td align="right">9.621</td>
+<td align="right">11.00</td>
+<td align="right">2341</td>
+<td align="left">Q1</td>
+</tr>
+<tr class="odd">
+<td align="right">721</td>
+<td align="right">11.05</td>
+<td align="right">5.441</td>
+<td align="right">9.21</td>
+<td align="right">2476</td>
+<td align="left">Q2</td>
+</tr>
+<tr class="even">
+<td align="right">733</td>
+<td align="right">11.77</td>
+<td align="right">11.562</td>
+<td align="right">11.88</td>
+<td align="right">2748</td>
+<td align="left">Q4</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Each row is a week in this dataset</p></li>
+<li><p>We have the number of sales, the price of the item, how much we spent on marketing that week (in 1000’s of $), what a competator has a similar product listed for, traffic (the number of people that clicked on the listing) and the season (Q1 - Q4)</p></li>
+<li><p>All the variables except for season are numeric in nature.</p></li>
+</ul>
+</div>
+<div id="summary-statistics" class="section level3 unnumbered hasAnchor">
+<h3>Summary Statistics<a href="week-6-october-9-2025.html#summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="week-6-october-9-2025.html#cb90-1" tabindex="-1"></a><span class="co"># Show me summaries of each column </span></span>
+<span id="cb90-2"><a href="week-6-october-9-2025.html#cb90-2" tabindex="-1"></a><span class="fu">summary</span>(dat)</span></code></pre></div>
+<pre><code>##      sales          price         marketing      competitor_price
+##  Min.   : 307   Min.   : 8.48   Min.   : 4.527   Min.   : 5.95   
+##  1st Qu.: 642   1st Qu.:10.25   1st Qu.: 9.752   1st Qu.: 9.13   
+##  Median : 742   Median :10.76   Median :12.207   Median :10.02   
+##  Mean   : 754   Mean   :10.74   Mean   :12.970   Mean   : 9.96   
+##  3rd Qu.: 872   3rd Qu.:11.29   3rd Qu.:15.549   3rd Qu.:10.79   
+##  Max.   :1370   Max.   :12.91   Max.   :41.051   Max.   :14.19   
+##     traffic        season         
+##  Min.   :1610   Length:600        
+##  1st Qu.:2354   Class :character  
+##  Median :2589   Mode  :character  
+##  Mean   :2571                     
+##  3rd Qu.:2775                     
+##  Max.   :3448</code></pre>
+<ul>
+<li><p>We can glance through these summaries to see descriptive information about each column</p></li>
+<li><p>Take now of how spread out the scores in each column are to get a feel for the data.</p></li>
+</ul>
+</div>
+<div id="data-structure" class="section level3 unnumbered hasAnchor">
+<h3>Data Structure<a href="week-6-october-9-2025.html#data-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="week-6-october-9-2025.html#cb92-1" tabindex="-1"></a><span class="co"># Show me the structure of the dataset</span></span>
+<span id="cb92-2"><a href="week-6-october-9-2025.html#cb92-2" tabindex="-1"></a><span class="fu">str</span>(dat)</span></code></pre></div>
+<pre><code>## spc_tbl_ [600 × 6] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ sales           : num [1:600] 703 547 678 483 721 ...
+##  $ price           : num [1:600] 10.2 11 11.4 11.4 11.1 ...
+##  $ marketing       : num [1:600] 7.95 10.4 9.53 9.62 5.44 ...
+##  $ competitor_price: num [1:600] 9.7 10.51 11.19 11 9.21 ...
+##  $ traffic         : num [1:600] 2898 2320 2597 2341 2476 ...
+##  $ season          : chr [1:600] &quot;Q1&quot; &quot;Q1&quot; &quot;Q1&quot; &quot;Q1&quot; ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   sales = col_double(),
+##   ..   price = col_double(),
+##   ..   marketing = col_double(),
+##   ..   competitor_price = col_double(),
+##   ..   traffic = col_double(),
+##   ..   season = col_character()
+##   .. )
+##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
+<ul>
+<li><p>Similar to what we see in the working environment</p></li>
+<li><p>Provides each column header, the type of data contained, and a few example values.</p></li>
+</ul>
+</div>
+<div id="histograms" class="section level3 unnumbered hasAnchor">
+<h3>Histograms<a href="week-6-october-9-2025.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Histograms convey the same information as the summary tables above. We can estimate the mean, the range, and understand the spread of the scores by looking at the shapes of the distributions.</p>
+<ul>
+<li><p>I find that the visual pictures of the histograms are easier to understand than the values in the summary stats.</p></li>
+<li><p>e.g., we sell an average of about 750 units per week. Or the amount we spend on marketing is right-skewed.</p></li>
+<li><p>Looking at these charts also makes me wonder what we would see if we computed $ earned per week. This would make sense to do, because we really care about how much we earn, not how many units we sell.</p></li>
+</ul>
+<p>We can compute a new column called <code>dollars</code>, which will contain information about how much we earned each week.</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="week-6-october-9-2025.html#cb94-1" tabindex="-1"></a>dat<span class="sc">$</span>dollars <span class="ot">&lt;-</span> dat<span class="sc">$</span>sales <span class="sc">*</span> dat<span class="sc">$</span>price</span>
+<span id="cb94-2"><a href="week-6-october-9-2025.html#cb94-2" tabindex="-1"></a>dat<span class="sc">$</span>landed_cost <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">*</span> dat<span class="sc">$</span>sales</span>
+<span id="cb94-3"><a href="week-6-october-9-2025.html#cb94-3" tabindex="-1"></a>dat<span class="sc">$</span>net_rev <span class="ot">&lt;-</span> dat<span class="sc">$</span>dollars <span class="sc">-</span> dat<span class="sc">$</span>landed_cost</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="week-6-october-9-2025.html#cb95-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span></span>
+<span id="cb95-2"><a href="week-6-october-9-2025.html#cb95-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="st">&quot;season&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb95-3"><a href="week-6-october-9-2025.html#cb95-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">week =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">600</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb95-4"><a href="week-6-october-9-2025.html#cb95-4" tabindex="-1"></a>  <span class="fu">melt</span>(<span class="at">id.vars =</span> <span class="st">&quot;week&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb95-5"><a href="week-6-october-9-2025.html#cb95-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span></span>
+<span id="cb95-6"><a href="week-6-october-9-2025.html#cb95-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;Black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb95-7"><a href="week-6-october-9-2025.html#cb95-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb95-8"><a href="week-6-october-9-2025.html#cb95-8" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+</div>
+</div>
+<div id="check-correlations" class="section level2 unnumbered hasAnchor">
+<h2>Check Correlations<a href="week-6-october-9-2025.html#check-correlations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, we need to remove the season column because it is non-numeric, and we can’t compute correlations involving it.</p>
+<ul>
+<li><p>I am assigning the data onto a new object, <code>a</code> to preserve the complete data stored in the object <code>dat</code>.</p></li>
+<li><p>This way, if I want to use that season column in some subsequent analysis, I won’t have to re-load the data from the .csv file.</p></li>
+</ul>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="week-6-october-9-2025.html#cb96-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb96-2"><a href="week-6-october-9-2025.html#cb96-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="st">&quot;season&quot;</span>))</span></code></pre></div>
+<p><strong>Sales</strong> will be our outcome variable of interest. From a business perspective, we generally care about predicting sales more than anything else! Have a good understanding of how many sales we could expect under different conditions might inform us of how we want to strategically price our item, how much inventory to have on hand at any given time, etc.</p>
+<p>A nice way to view all the pairwise correlations between the variables together is to create a correlation matrix, then plot it as a heatmap. I will show you how to accomplish this in a single chunk of code using <code>ggplot()</code> below.</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="week-6-october-9-2025.html#cb97-1" tabindex="-1"></a><span class="fu">cor</span>(a) <span class="sc">%&gt;%</span></span>
+<span id="cb97-2"><a href="week-6-october-9-2025.html#cb97-2" tabindex="-1"></a>  <span class="fu">melt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb97-3"><a href="week-6-october-9-2025.html#cb97-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">round</span>(value, <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb97-4"><a href="week-6-october-9-2025.html#cb97-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Var1, <span class="at">y =</span> Var2, <span class="at">fill =</span> value, <span class="at">label =</span> value)) <span class="sc">+</span></span>
+<span id="cb97-5"><a href="week-6-october-9-2025.html#cb97-5" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb97-6"><a href="week-6-october-9-2025.html#cb97-6" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">colour =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb97-7"><a href="week-6-october-9-2025.html#cb97-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb97-8"><a href="week-6-october-9-2025.html#cb97-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb97-9"><a href="week-6-october-9-2025.html#cb97-9" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb97-10"><a href="week-6-october-9-2025.html#cb97-10" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb97-11"><a href="week-6-october-9-2025.html#cb97-11" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;Correlation </span><span class="sc">\n</span><span class="st">Coefficient (r)&quot;</span></span>
+<span id="cb97-12"><a href="week-6-october-9-2025.html#cb97-12" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<ul>
+<li><p>There is a negative correlation between <strong>sales</strong> and <strong>price</strong> (when the price goes down, the sales go up).</p></li>
+<li><p>There is a positive correlation between <strong>sales</strong> and <strong>traffic</strong> (the more people click on the listing, the more sales).</p></li>
+<li><p>There is also a positive correlation between our item’s price and the competitor’s price (this is less useful to our modelling efforts than the two points written above).</p></li>
+</ul>
+</div>
+<div id="split-the-data" class="section level2 unnumbered hasAnchor">
+<h2>Split the Data<a href="week-6-october-9-2025.html#split-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, we must split the existing data into a <strong>training set</strong> and a <strong>test set</strong>. We will randomly select 70% of the rows from the data to assign to the training set and the rest will be our test data.</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="week-6-october-9-2025.html#cb98-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">994</span>)</span>
+<span id="cb98-2"><a href="week-6-october-9-2025.html#cb98-2" tabindex="-1"></a>train_index <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(dat), <span class="fl">0.7</span> <span class="sc">*</span> <span class="fu">nrow</span>(dat))</span>
+<span id="cb98-3"><a href="week-6-october-9-2025.html#cb98-3" tabindex="-1"></a><span class="fu">head</span>(train_index)</span></code></pre></div>
+<pre><code>## [1] 550 595 454 538 294 413</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="week-6-october-9-2025.html#cb100-1" tabindex="-1"></a>train <span class="ot">&lt;-</span> dat[train_index, ]</span>
+<span id="cb100-2"><a href="week-6-october-9-2025.html#cb100-2" tabindex="-1"></a>test <span class="ot">&lt;-</span> dat[<span class="sc">-</span>train_index, ]</span></code></pre></div>
+</div>
+<div id="model-training" class="section level2 unnumbered hasAnchor">
+<h2>Model Training<a href="week-6-october-9-2025.html#model-training" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We will start with a “base model”, then test whether adding additional variables to it further improves its ability to model the data. In this scenario, it makes sense to use <code>price ~ sales</code> as the base model.</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="week-6-october-9-2025.html#cb101-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb101-2"><a href="week-6-october-9-2025.html#cb101-2" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="week-6-october-9-2025.html#cb101-3" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> price, <span class="at">data =</span> train)</span>
+<span id="cb101-4"><a href="week-6-october-9-2025.html#cb101-4" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = sales ~ price, data = train)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -426.56 -111.95    1.38  107.05  615.48 
+## 
+## Coefficients:
+##             Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept)  1690.05     116.49  14.507 &lt; 0.0000000000000002 ***
+## price         -87.76      10.82  -8.111  0.00000000000000563 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 162.2 on 418 degrees of freedom
+## Multiple R-squared:  0.136,  Adjusted R-squared:  0.1339 
+## F-statistic: 65.79 on 1 and 418 DF,  p-value: 0.00000000000000563</code></pre>
+<ul>
+<li><p>A one-dollar increase in price is associated with a reduction in sales per week of 88 unites.</p></li>
+<li><p>The effect of price on sales is statistically significant with p &lt; 0.001.</p></li>
+<li><p>The price of our item accounts for 13.6% of the variability in the number of sales we see across weeks (<span class="math inline">\(R^2\)</span> = 0.136)</p></li>
+</ul>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="week-6-october-9-2025.html#cb103-1" tabindex="-1"></a>model_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> price <span class="sc">+</span> traffic, <span class="at">data =</span> train)</span>
+<span id="cb103-2"><a href="week-6-october-9-2025.html#cb103-2" tabindex="-1"></a><span class="fu">summary</span>(model_2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = sales ~ price + traffic, data = train)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -379.90 -110.04   -7.81   99.18  464.21 
+## 
+## Coefficients:
+##               Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept) 1068.95025  121.62641   8.789 &lt; 0.0000000000000002 ***
+## price        -82.22217    9.73864  -8.443 0.000000000000000518 ***
+## traffic        0.21895    0.02183  10.031 &lt; 0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 145.8 on 417 degrees of freedom
+## Multiple R-squared:  0.3039, Adjusted R-squared:  0.3006 
+## F-statistic: 91.04 on 2 and 417 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<ul>
+<li><p>The price of the item and the number of visits to the item’s page are unique (independent) predictors of the number of sales (both p &lt; 0.001)</p></li>
+<li><p>Together, the item’s price and the number of clicks to the page account for 30% of the variability in sales per week.</p></li>
+</ul>
+<p>We can formilly test whether the more complex model (involving both traffic and price) is <strong>statistically</strong> better than our base model (where price is the only predictor)</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="week-6-october-9-2025.html#cb105-1" tabindex="-1"></a><span class="fu">anova</span>(model, model_2)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: sales ~ price
+## Model 2: sales ~ price + traffic
+##   Res.Df      RSS Df Sum of Sq      F                Pr(&gt;F)    
+## 1    418 11000454                                              
+## 2    417  8862079  1   2138375 100.62 &lt; 0.00000000000000022 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<ul>
+<li>The analysis of variance (ANOVA) indicates that <code>model_2</code> performed significantly better than the base model (p &lt; 0.001)</li>
+</ul>
+<p>Let’s try add another predictor from the data:</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="week-6-october-9-2025.html#cb107-1" tabindex="-1"></a>model_3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> price <span class="sc">+</span> traffic <span class="sc">+</span> competitor_price, <span class="at">data =</span> train)</span>
+<span id="cb107-2"><a href="week-6-october-9-2025.html#cb107-2" tabindex="-1"></a><span class="fu">summary</span>(model_3)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = sales ~ price + traffic + competitor_price, data = train)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -385.10  -99.98   -8.45   95.69  484.35 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept)      1067.18656  115.10904   9.271 &lt; 0.0000000000000002 ***
+## price            -128.21046   11.29706 -11.349 &lt; 0.0000000000000002 ***
+## traffic             0.22437    0.02067  10.854 &lt; 0.0000000000000002 ***
+## competitor_price   48.36781    6.87059   7.040       0.000000000008 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 138 on 416 degrees of freedom
+## Multiple R-squared:  0.378,  Adjusted R-squared:  0.3736 
+## F-statistic: 84.28 on 3 and 416 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<ul>
+<li><p>The item’s price, the number of hits on our Amazon page, and the competitor’s price are all significant unique predictors of the number of weekly sales (all p &lt; 0.001)</p></li>
+<li><p>Combined, variability in these three predictors’ levels account for 37.8% of the variability in number of sales.</p></li>
+</ul>
+<p>Again, we can use the <code>anova</code> command to test whether adding the new predictor significantly improved model fit over our current best model:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="week-6-october-9-2025.html#cb109-1" tabindex="-1"></a><span class="fu">anova</span>(model_2, model_3)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: sales ~ price + traffic
+## Model 2: sales ~ price + traffic + competitor_price
+##   Res.Df     RSS Df Sum of Sq      F            Pr(&gt;F)    
+## 1    417 8862079                                          
+## 2    416 7918702  1    943378 49.559 0.000000000007996 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<ul>
+<li>Since p &lt; 0.001, <code>model_3</code> does a significantly better job at fitting the data than does <code>model 2</code></li>
+</ul>
+<p>Ok, so let’s make one more model with all four predictors entered:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="week-6-october-9-2025.html#cb111-1" tabindex="-1"></a>model_4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> price <span class="sc">+</span> traffic <span class="sc">+</span> competitor_price <span class="sc">+</span> marketing, <span class="at">data =</span> train)</span>
+<span id="cb111-2"><a href="week-6-october-9-2025.html#cb111-2" tabindex="-1"></a><span class="fu">summary</span>(model_4)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = sales ~ price + traffic + competitor_price + marketing, 
+##     data = train)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -373.43 -103.27   -6.93   99.14  481.66 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept)      1047.59456  116.75866   8.972 &lt; 0.0000000000000002 ***
+## price            -127.78228   11.30510 -11.303 &lt; 0.0000000000000002 ***
+## traffic             0.22433    0.02067  10.852 &lt; 0.0000000000000002 ***
+## competitor_price   48.07517    6.87677   6.991       0.000000000011 ***
+## marketing           1.39738    1.39510   1.002                0.317    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 138 on 415 degrees of freedom
+## Multiple R-squared:  0.3795, Adjusted R-squared:  0.3736 
+## F-statistic: 63.46 on 4 and 415 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<ul>
+<li><p>The item’s price, the number of visits to the page, and the competator’s price are all significant unique predictors, over and above the influence of marketing $ spent (all p &lt; 0.001)</p></li>
+<li><p>Marketing spend is not a significant unique predictor of sales.</p></li>
+<li><p>Combined, these predictors account for 37.95% of the variability in the number of weekly sales.</p></li>
+</ul>
+<p>Compare <code>model_4</code> to <code>model_3</code>:</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="week-6-october-9-2025.html#cb113-1" tabindex="-1"></a><span class="fu">anova</span>(model_3, model_4)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: sales ~ price + traffic + competitor_price
+## Model 2: sales ~ price + traffic + competitor_price + marketing
+##   Res.Df     RSS Df Sum of Sq      F Pr(&gt;F)
+## 1    416 7918702                           
+## 2    415 7899604  1     19097 1.0033 0.3171</code></pre>
+<ul>
+<li><p><code>model_4</code> is not a significantly better fit to the data than <code>model_3</code></p></li>
+<li><p>Therefore, <code>model_3</code> performed the best out of the options that we tested.</p></li>
+</ul>
+<p><strong><em>Apply <code>model_3</code> to the Test Data</em></strong></p>
+<p>In order to investigate how well <code>model_3</code> will perform on data that it has never seen before, we can superimpose it over the test data and investigate how well the line fits:</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="week-6-october-9-2025.html#cb115-1" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model_3, <span class="at">newdata =</span> test)</span></code></pre></div>
+<p>The key metric of model fit is the <span class="math inline">\(RMSE\)</span> (root mean squared error) which tells us the amount of <em>unexplained</em> variability:</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="week-6-october-9-2025.html#cb116-1" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>((test<span class="sc">$</span>sales <span class="sc">-</span> predictions)<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## [1] 127.142</code></pre>
+<ul>
+<li><p>Here, <span class="math inline">\(RMSE\)</span> = 127.14.</p></li>
+<li><p>To interpret the RMSE, we compare to the residual error that was leftover when that model was generated on the training dataset.</p></li>
+</ul>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="week-6-october-9-2025.html#cb118-1" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>(model_3<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## [1] 137.3101</code></pre>
+<ul>
+<li><p>In this case, the model actually performed a little better on the test data than it did during training!</p></li>
+<li><p>This is very strong evidence that the current model will perform well predicting future sales.</p></li>
+</ul>
+</div>
+<div id="remake-the-models-with-net_rev-as-the-dv" class="section level2 unnumbered hasAnchor">
+<h2>Remake the models with net_rev as the DV<a href="week-6-october-9-2025.html#remake-the-models-with-net_rev-as-the-dv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="week-6-october-9-2025.html#cb120-1" tabindex="-1"></a><span class="fu">head</span>(dat)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 9
+##   sales price marketing competitor_price traffic season dollars landed_cost
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;
+## 1   703  10.2      7.94             9.7     2898 Q1       7206.        2812
+## 2   547  11       10.4             10.5     2320 Q1       6017         2188
+## 3   678  11.4      9.53            11.2     2597 Q1       7736.        2712
+## 4   483  11.4      9.62            11       2341 Q1       5497.        1932
+## 5   721  11.0      5.44             9.21    2476 Q2       7967.        2884
+## 6   733  11.8     11.6             11.9     2748 Q4       8627.        2932
+## # ℹ 1 more variable: net_rev &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="week-6-october-9-2025.html#cb122-1" tabindex="-1"></a>cost_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(net_rev <span class="sc">~</span> traffic, <span class="at">data =</span> dat)</span>
+<span id="cb122-2"><a href="week-6-october-9-2025.html#cb122-2" tabindex="-1"></a><span class="fu">summary</span>(cost_model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = net_rev ~ traffic, data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2517.2  -689.5   -50.6   631.3  3739.6 
+## 
+## Coefficients:
+##              Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept) 1455.5291   321.1477   4.532           0.00000705 ***
+## traffic        1.3930     0.1239  11.242 &lt; 0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 988.4 on 598 degrees of freedom
+## Multiple R-squared:  0.1745, Adjusted R-squared:  0.1731 
+## F-statistic: 126.4 on 1 and 598 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="week-6-october-9-2025.html#cb124-1" tabindex="-1"></a>cost_model_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(net_rev <span class="sc">~</span> price <span class="sc">+</span> traffic <span class="sc">+</span> competitor_price, <span class="at">data =</span> dat)</span>
+<span id="cb124-2"><a href="week-6-october-9-2025.html#cb124-2" tabindex="-1"></a><span class="fu">summary</span>(cost_model_2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = net_rev ~ price + traffic + competitor_price, data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2492.8  -615.9   -38.3   577.4  3306.2 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept)      -953.6049   631.8273  -1.509               0.132    
+## price             -99.4490    61.6952  -1.612               0.108    
+## traffic             1.4113     0.1144  12.336 &lt;0.0000000000000002 ***
+## competitor_price  344.3674    36.8791   9.338 &lt;0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 912.2 on 596 degrees of freedom
+## Multiple R-squared:  0.2992, Adjusted R-squared:  0.2957 
+## F-statistic: 84.81 on 3 and 596 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="week-6-october-9-2025.html#cb126-1" tabindex="-1"></a>cost_model_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(net_rev <span class="sc">~</span> traffic <span class="sc">+</span> competitor_price <span class="sc">+</span> price, <span class="at">data =</span> dat)</span>
+<span id="cb126-2"><a href="week-6-october-9-2025.html#cb126-2" tabindex="-1"></a><span class="fu">summary</span>(cost_model_2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = net_rev ~ traffic + competitor_price + price, data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2492.8  -615.9   -38.3   577.4  3306.2 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept)      -953.6049   631.8273  -1.509               0.132    
+## traffic             1.4113     0.1144  12.336 &lt;0.0000000000000002 ***
+## competitor_price  344.3674    36.8791   9.338 &lt;0.0000000000000002 ***
+## price             -99.4490    61.6952  -1.612               0.108    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 912.2 on 596 degrees of freedom
+## Multiple R-squared:  0.2992, Adjusted R-squared:  0.2957 
+## F-statistic: 84.81 on 3 and 596 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<ul>
+<li><p>The effects of traffic and the other guy’s price remain significant even after controlling for our price point</p></li>
+<li><p>Our price point is not a significant unique predictor of revenue when controlling for the other factors in the model</p></li>
+</ul>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="week-6-october-9-2025.html#cb128-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb128-2"><a href="week-6-october-9-2025.html#cb128-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> traffic, <span class="at">y =</span> net_rev)) <span class="sc">+</span></span>
+<span id="cb128-3"><a href="week-6-october-9-2025.html#cb128-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb128-4"><a href="week-6-october-9-2025.html#cb128-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> F, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb128-5"><a href="week-6-october-9-2025.html#cb128-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb128-6"><a href="week-6-october-9-2025.html#cb128-6" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb128-7"><a href="week-6-october-9-2025.html#cb128-7" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Number of Hits&quot;</span>, </span>
+<span id="cb128-8"><a href="week-6-october-9-2025.html#cb128-8" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Weekly Net Revenue ($)&quot;</span></span>
+<span id="cb128-9"><a href="week-6-october-9-2025.html#cb128-9" tabindex="-1"></a>  )</span>
+<span id="cb128-10"><a href="week-6-october-9-2025.html#cb128-10" tabindex="-1"></a></span>
+<span id="cb128-11"><a href="week-6-october-9-2025.html#cb128-11" tabindex="-1"></a>b <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb128-12"><a href="week-6-october-9-2025.html#cb128-12" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> competitor_price, <span class="at">y =</span> net_rev)) <span class="sc">+</span></span>
+<span id="cb128-13"><a href="week-6-october-9-2025.html#cb128-13" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb128-14"><a href="week-6-october-9-2025.html#cb128-14" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> F, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb128-15"><a href="week-6-october-9-2025.html#cb128-15" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb128-16"><a href="week-6-october-9-2025.html#cb128-16" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb128-17"><a href="week-6-october-9-2025.html#cb128-17" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Competitor Price&quot;</span>, </span>
+<span id="cb128-18"><a href="week-6-october-9-2025.html#cb128-18" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Weekly Net Revenue ($)&quot;</span></span>
+<span id="cb128-19"><a href="week-6-october-9-2025.html#cb128-19" tabindex="-1"></a>  )</span>
+<span id="cb128-20"><a href="week-6-october-9-2025.html#cb128-20" tabindex="-1"></a></span>
+<span id="cb128-21"><a href="week-6-october-9-2025.html#cb128-21" tabindex="-1"></a>c <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb128-22"><a href="week-6-october-9-2025.html#cb128-22" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> competitor_price, <span class="at">y =</span> traffic)) <span class="sc">+</span></span>
+<span id="cb128-23"><a href="week-6-october-9-2025.html#cb128-23" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb128-24"><a href="week-6-october-9-2025.html#cb128-24" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> F, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb128-25"><a href="week-6-october-9-2025.html#cb128-25" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb128-26"><a href="week-6-october-9-2025.html#cb128-26" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb128-27"><a href="week-6-october-9-2025.html#cb128-27" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Competitor Price&quot;</span>, </span>
+<span id="cb128-28"><a href="week-6-october-9-2025.html#cb128-28" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of Hits&quot;</span></span>
+<span id="cb128-29"><a href="week-6-october-9-2025.html#cb128-29" tabindex="-1"></a>  )</span>
+<span id="cb128-30"><a href="week-6-october-9-2025.html#cb128-30" tabindex="-1"></a></span>
+<span id="cb128-31"><a href="week-6-october-9-2025.html#cb128-31" tabindex="-1"></a>panel <span class="ot">&lt;-</span> <span class="fu">ggarrange</span>(a,b,c,</span>
+<span id="cb128-32"><a href="week-6-october-9-2025.html#cb128-32" tabindex="-1"></a>          <span class="at">nrow =</span> <span class="dv">1</span>,</span>
+<span id="cb128-33"><a href="week-6-october-9-2025.html#cb128-33" tabindex="-1"></a>          <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>))</span>
+<span id="cb128-34"><a href="week-6-october-9-2025.html#cb128-34" tabindex="-1"></a></span>
+<span id="cb128-35"><a href="week-6-october-9-2025.html#cb128-35" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/panel.png&quot;</span>, <span class="at">height =</span> <span class="dv">3</span>, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb128-36"><a href="week-6-october-9-2025.html#cb128-36" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/panel.png&quot;</span>)</span></code></pre></div>
+<p><img src="Figs/panel.png" width="1200" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-5-october-2-2025.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-7-october-16-2025.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-Oct9.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

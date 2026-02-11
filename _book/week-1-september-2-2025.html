@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 1: September 2 2025 | INF2167: R For Data Science – In Class Coding Demonstrations</title>
+  <meta name="description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 1: September 2 2025 | INF2167: R For Data Science – In Class Coding Demonstrations" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 1: September 2 2025 | INF2167: R For Data Science – In Class Coding Demonstrations" />
+  
+  <meta name="twitter:description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="week-2-september-11-2025.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">INF2167 - Fall 2025</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html"><i class="fa fa-check"></i>Week 1: September 2 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#intro-to-markdown"><i class="fa fa-check"></i>Intro to Markdown</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#two-hashtags-makes-a-level-2-header"><i class="fa fa-check"></i>Two Hashtags Makes a Level 2 header</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#three-hashtags-makes-a-level-3-header"><i class="fa fa-check"></i>Three Hashtags Makes a Level 3 header</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#intro-to-using-r-code"><i class="fa fa-check"></i>Intro to Using R Code</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#object-oriented-programming"><i class="fa fa-check"></i>Object Oriented Programming</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#lists-of-values-vectors"><i class="fa fa-check"></i>Lists of Values (Vectors)</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#functions-in-r"><i class="fa fa-check"></i>Functions in R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html"><i class="fa fa-check"></i>Week 2: September 11 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#packages-in-r"><i class="fa fa-check"></i>Packages in R</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#example-generating-ficticous-data"><i class="fa fa-check"></i>Example: Generating Ficticous Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#compute-correlations"><i class="fa fa-check"></i>Compute Correlations</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#option-1-cor.test"><i class="fa fa-check"></i>Option #1: <code>cor.test</code></a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#option-2-cor"><i class="fa fa-check"></i>Option #2: <code>cor()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#a-picture-is-worth-1000-words"><i class="fa fa-check"></i>A Picture is Worth 1000 Words</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#construct-a-linear-model"><i class="fa fa-check"></i>Construct a Linear Model</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#tidy-outputs"><i class="fa fa-check"></i>Tidy Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html"><i class="fa fa-check"></i>Week 3: September 18 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#todays-topic-intro-to-multiple-regression"><i class="fa fa-check"></i>Today’s Topic: Intro to Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#the-mtcars-dataset"><i class="fa fa-check"></i>The <code>mtcars</code> Dataset</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#recall-simple-regression"><i class="fa fa-check"></i>Recall: Simple Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#multiple-regression"><i class="fa fa-check"></i>Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#control-for-other-variables"><i class="fa fa-check"></i>1. Control for Other Variables</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#investigate-the-influence-of-moderators"><i class="fa fa-check"></i>2. Investigate the Influence of Moderators</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-september-25-2025.html"><a href="week-4-september-25-2025.html"><i class="fa fa-check"></i>Week 4: September 25 2025</a></li>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html"><i class="fa fa-check"></i>Week 5: October 2 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#todays-topic-bootstraping"><i class="fa fa-check"></i>Today’s Topic: Bootstraping</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#example-1-bootstrapping-a-mean"><i class="fa fa-check"></i>Example #1: Bootstrapping a Mean</a></li>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#example-2-bootstrapping-a-regression-slope"><i class="fa fa-check"></i>Example #2: Bootstrapping a Regression Slope</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html"><i class="fa fa-check"></i>Week 6: October 9 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#get-data"><i class="fa fa-check"></i>Get Data</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#run-descrptives"><i class="fa fa-check"></i>Run Descrptives</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#print-data-preview"><i class="fa fa-check"></i>Print Data Preview</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#summary-statistics"><i class="fa fa-check"></i>Summary Statistics</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#data-structure"><i class="fa fa-check"></i>Data Structure</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#histograms"><i class="fa fa-check"></i>Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#check-correlations"><i class="fa fa-check"></i>Check Correlations</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#split-the-data"><i class="fa fa-check"></i>Split the Data</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#model-training"><i class="fa fa-check"></i>Model Training</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#remake-the-models-with-net_rev-as-the-dv"><i class="fa fa-check"></i>Remake the models with net_rev as the DV</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-october-16-2025.html"><a href="week-7-october-16-2025.html"><i class="fa fa-check"></i>Week 7: October 16 2025</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html"><i class="fa fa-check"></i>Week 8: October 23 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#penguins-pca-analysis"><i class="fa fa-check"></i>Penguins PCA Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#exploratory-data-analysis"><i class="fa fa-check"></i>Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#standardize-variables"><i class="fa fa-check"></i>Standardize Variables</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#make-correlation-matrix"><i class="fa fa-check"></i>Make correlation matrix:</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#run-pca"><i class="fa fa-check"></i>Run PCA</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#choose-how-many-pcs-to-retain"><i class="fa fa-check"></i>Choose How Many PCs to Retain</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#assess-loadings"><i class="fa fa-check"></i>Assess Loadings</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#plot-the-raw-data-in-pc-space"><i class="fa fa-check"></i>Plot the Raw Data in PC Space</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#summary-of-analyses"><i class="fa fa-check"></i>Summary of Analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html"><i class="fa fa-check"></i>Week 9: November 6 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#exploratory-data-analysis-1"><i class="fa fa-check"></i>Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#explore-predictors"><i class="fa fa-check"></i>Explore Predictors</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#simple-scatterplot"><i class="fa fa-check"></i>Simple Scatterplot</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compute-simple-regression"><i class="fa fa-check"></i>Compute Simple Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#multiple-regression-1"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compare-non-linear-regression"><i class="fa fa-check"></i>Compare Non-Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#quadratic-model"><i class="fa fa-check"></i>Quadratic Model</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#multiple-regression-with-a-polynomial"><i class="fa fa-check"></i>Multiple Regression with a Polynomial</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#bootstrap-the-estimates"><i class="fa fa-check"></i>Bootstrap the Estimates</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#principal-component-analysis"><i class="fa fa-check"></i>Principal Component Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#explore-via-histograms"><i class="fa fa-check"></i>Explore via Histograms</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#correlation-matrix"><i class="fa fa-check"></i>Correlation Matrix</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compute-pca"><i class="fa fa-check"></i>Compute PCA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html"><i class="fa fa-check"></i>Week 10: November 13 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#overview"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#load-data"><i class="fa fa-check"></i>Load Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#base-r-vs.-tidyverse"><i class="fa fa-check"></i>Base R vs. Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#favorite-tidyverse-functions"><i class="fa fa-check"></i>Favorite Tidyverse Functions</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#select-some-rows"><i class="fa fa-check"></i>Select Some Rows</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#group-the-data"><i class="fa fa-check"></i>Group the Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#choose-rows-based-on-a-factor"><i class="fa fa-check"></i>Choose Rows Based on a Factor</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#arrange-the-data"><i class="fa fa-check"></i>Arrange the Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#selecting-some-columns"><i class="fa fa-check"></i>Selecting Some Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#generating-new-columns"><i class="fa fa-check"></i>Generating New columns</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#select-distinct-instances"><i class="fa fa-check"></i>Select Distinct instances</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#rename-columns"><i class="fa fa-check"></i>Rename Columns</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#rearranging-columns"><i class="fa fa-check"></i>Rearranging columns</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#write-off-a-.csv-file"><i class="fa fa-check"></i>Write Off a .csv File</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#see-more-of-less-of-the-data-preview"><i class="fa fa-check"></i>See More of Less of the Data Preview</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#randomly-sample-from-the-data"><i class="fa fa-check"></i>Randomly Sample From The Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#compute-quick-descriptive-stats"><i class="fa fa-check"></i>Compute Quick Descriptive Stats</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#generate-new-categorical-columns"><i class="fa fa-check"></i>Generate New Categorical Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#data-viz"><i class="fa fa-check"></i>Data viz</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#violin-plot"><i class="fa fa-check"></i>Violin Plot</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#bar-chart"><i class="fa fa-check"></i>Bar Chart</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#boxplot"><i class="fa fa-check"></i>Boxplot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-11-november-20-2025.html"><a href="week-11-november-20-2025.html"><i class="fa fa-check"></i>Week 11: November 20 2025</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INF2167: R For Data Science – In Class Coding Demonstrations</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-1-september-2-2025" class="section level1 unnumbered hasAnchor">
+<h1>Week 1: September 2 2025<a href="week-1-september-2-2025.html#week-1-september-2-2025" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="intro-to-markdown" class="section level2 unnumbered hasAnchor">
+<h2>Intro to Markdown<a href="week-1-september-2-2025.html#intro-to-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Rmarkdown is an end-to-end document creation tool. The main advantage of using this workflow is the ability to generate <strong>reproducible output files</strong>. The key benefit of working in this fashion is that you can integrate code, statistical analyses, charts, and written interpretations into a single document.</p>
+<p>You can organize an Rmarkdown document using headings and subheadings, which are written using hashtags:</p>
+</div>
+<div id="two-hashtags-makes-a-level-2-header" class="section level2 unnumbered hasAnchor">
+<h2>Two Hashtags Makes a Level 2 header<a href="week-1-september-2-2025.html#two-hashtags-makes-a-level-2-header" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="three-hashtags-makes-a-level-3-header" class="section level3 unnumbered hasAnchor">
+<h3>Three Hashtags Makes a Level 3 header<a href="week-1-september-2-2025.html#three-hashtags-makes-a-level-3-header" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can also add emphasis to written sections by bolding and / or italicizing key words.</p>
+<ul>
+<li><p>Write single asterisks on each side of text to make <em>italics</em>.</p></li>
+<li><p>Wrap text with double asterisks to make text <strong>bold</strong>.</p></li>
+<li><p>Triple asterisks on each side will make the text <strong><em>both italic and bold</em></strong>.</p></li>
+</ul>
+</div>
+</div>
+<div id="intro-to-using-r-code" class="section level2 unnumbered hasAnchor">
+<h2>Intro to Using R Code<a href="week-1-september-2-2025.html#intro-to-using-r-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Using markdown code (as described above) goes <em>outside</em> of code blocks. All R code must be written <strong><em>inside</em></strong> of code blocks. You can generate a code block by pressing <code>control</code> + <code>shift</code> + <code>i</code> on your keyboard (or <code>command</code> + <code>option</code> + <code>i</code> if you’re using a mac) to generate a code block.</p>
+<p>When we enter a math equation with no assignment it will print out the result:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="week-1-september-2-2025.html#cb1-1" tabindex="-1"></a><span class="dv">12</span> <span class="sc">*</span> <span class="dv">4</span> </span></code></pre></div>
+<pre><code>## [1] 48</code></pre>
+<ul>
+<li>So R can be used as a badass calculator.</li>
+</ul>
+<div id="object-oriented-programming" class="section level3 unnumbered hasAnchor">
+<h3>Object Oriented Programming<a href="week-1-september-2-2025.html#object-oriented-programming" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Although computing calculations can be useful, we often want to save the results of computational processes so that they can be used in subsequent analysis steps. Instead of just writing code “in line” (as shown above), we can <strong>assign</strong> the results of a computational process onto an <strong>object</strong> in the working environment. Use the arrow (<code>&lt;-</code>) to assign a new object.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="week-1-september-2-2025.html#cb3-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">12</span> <span class="sc">*</span> <span class="dv">4</span> </span></code></pre></div>
+<ul>
+<li><p>The results of this process are now assigned onto the object <code>a</code>.</p></li>
+<li><p>We can then call back the object <code>a</code> to use it in subsequent computational steps.</p></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="week-1-september-2-2025.html#cb4-1" tabindex="-1"></a>a <span class="sc">*</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 144</code></pre>
+<ul>
+<li>Here, R will print out 48 * 3</li>
+</ul>
+<p>We could also assign the results of <code>a</code> * 3 onto another object in the environment:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="week-1-september-2-2025.html#cb6-1" tabindex="-1"></a>b <span class="ot">&lt;-</span> a <span class="sc">*</span> <span class="dv">3</span></span></code></pre></div>
+<p>One thing to watch out for when working with object-oriented programming is that objects can be overwritten. R will not give any warning to let you know when something is overwritten.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="week-1-september-2-2025.html#cb7-1" tabindex="-1"></a><span class="co"># R will overwrite with no warning! Watch out!</span></span>
+<span id="cb7-2"><a href="week-1-september-2-2025.html#cb7-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> b <span class="sc">*</span> a</span></code></pre></div>
+<ul>
+<li>Now the object <code>a</code> will be the value 6912.</li>
+</ul>
+</div>
+<div id="lists-of-values-vectors" class="section level3 unnumbered hasAnchor">
+<h3>Lists of Values (Vectors)<a href="week-1-september-2-2025.html#lists-of-values-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We often work with ordered lists of values, not just single values as I showed above. In R, we can assign lists of values onto objects in the environment as well. In order to write an ordered list of values, we an use the function <code>c()</code> which means “concatenate” (a.k.a. “combine”). We then <strong>pass</strong> the list of values separated by commas inside the parentheses.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="week-1-september-2-2025.html#cb8-1" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>   , <span class="dv">5</span>, <span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">0</span>)</span></code></pre></div>
+<ul>
+<li><p>R language does not care about spaces or line breaks.</p></li>
+<li><p>You should use spacing to help organize your code and to increase readability.</p></li>
+</ul>
+</div>
+<div id="functions-in-r" class="section level3 unnumbered hasAnchor">
+<h3>Functions in R<a href="week-1-september-2-2025.html#functions-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Most of the time when using R, you will want to structure your work using <strong>functions</strong>, rather than just writing out mathematical equations. Functions in R follow a simple syntax:</p>
+<p><span class="math display">\[
+do\; this (to\; that, \; with \; specifications)
+\]</span></p>
+<ul>
+<li><p>The “verb” goes before the parentheses and specifies a mathematical process that should be carried out.</p></li>
+<li><p>The “noun” goes inside the brackets, telling R what the verb should be applied to.</p></li>
+</ul>
+<p><strong>Example</strong>: we can use the <code>data.frame</code> function to assign multiple lists of values onto an object in the environment. This allows us to store data in a 2-dimensional space where there are multiple rows and multiple columns.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="week-1-september-2-2025.html#cb9-1" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-2"><a href="week-1-september-2-2025.html#cb9-2" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),</span>
+<span id="cb9-3"><a href="week-1-september-2-2025.html#cb9-3" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">110</span>, <span class="dv">98</span>, <span class="dv">75</span>, <span class="dv">65</span>)</span>
+<span id="cb9-4"><a href="week-1-september-2-2025.html#cb9-4" tabindex="-1"></a>)</span></code></pre></div>
+<ul>
+<li><p>Ideally, data should be organized as <strong><em>one subject one row</em></strong>.</p></li>
+<li><p>Most of the time when working in analytics / data science, you will work with data frames.</p></li>
+</ul>
+<p>We could also pass our data frame to other functions. For example, we could pass our object <code>d</code> to the <code>tail()</code> function, which would print out the last six rows of data.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="week-1-september-2-2025.html#cb10-1" tabindex="-1"></a><span class="fu">tail</span>(d, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##   ID Score
+## 4  4    98
+## 5  5    75
+## 6  6    65</code></pre>
+<ul>
+<li>Since I added ,3 inside the brackets, we only see the last three rows of data printed out.</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-2-september-11-2025.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-Sept4.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

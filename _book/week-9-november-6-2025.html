@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 9: November 6 2025 | INF2167: R For Data Science – In Class Coding Demonstrations</title>
+  <meta name="description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 9: November 6 2025 | INF2167: R For Data Science – In Class Coding Demonstrations" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 9: November 6 2025 | INF2167: R For Data Science – In Class Coding Demonstrations" />
+  
+  <meta name="twitter:description" content="This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-8-october-23-2025.html"/>
+<link rel="next" href="week-10-november-13-2025.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">INF2167 - Fall 2025</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html"><i class="fa fa-check"></i>Week 1: September 2 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#intro-to-markdown"><i class="fa fa-check"></i>Intro to Markdown</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#two-hashtags-makes-a-level-2-header"><i class="fa fa-check"></i>Two Hashtags Makes a Level 2 header</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#three-hashtags-makes-a-level-3-header"><i class="fa fa-check"></i>Three Hashtags Makes a Level 3 header</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#intro-to-using-r-code"><i class="fa fa-check"></i>Intro to Using R Code</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#object-oriented-programming"><i class="fa fa-check"></i>Object Oriented Programming</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#lists-of-values-vectors"><i class="fa fa-check"></i>Lists of Values (Vectors)</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#functions-in-r"><i class="fa fa-check"></i>Functions in R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html"><i class="fa fa-check"></i>Week 2: September 11 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#packages-in-r"><i class="fa fa-check"></i>Packages in R</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#example-generating-ficticous-data"><i class="fa fa-check"></i>Example: Generating Ficticous Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#compute-correlations"><i class="fa fa-check"></i>Compute Correlations</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#option-1-cor.test"><i class="fa fa-check"></i>Option #1: <code>cor.test</code></a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#option-2-cor"><i class="fa fa-check"></i>Option #2: <code>cor()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#a-picture-is-worth-1000-words"><i class="fa fa-check"></i>A Picture is Worth 1000 Words</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#construct-a-linear-model"><i class="fa fa-check"></i>Construct a Linear Model</a></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#tidy-outputs"><i class="fa fa-check"></i>Tidy Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html"><i class="fa fa-check"></i>Week 3: September 18 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#todays-topic-intro-to-multiple-regression"><i class="fa fa-check"></i>Today’s Topic: Intro to Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#the-mtcars-dataset"><i class="fa fa-check"></i>The <code>mtcars</code> Dataset</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#recall-simple-regression"><i class="fa fa-check"></i>Recall: Simple Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#multiple-regression"><i class="fa fa-check"></i>Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#control-for-other-variables"><i class="fa fa-check"></i>1. Control for Other Variables</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#investigate-the-influence-of-moderators"><i class="fa fa-check"></i>2. Investigate the Influence of Moderators</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-september-25-2025.html"><a href="week-4-september-25-2025.html"><i class="fa fa-check"></i>Week 4: September 25 2025</a></li>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html"><i class="fa fa-check"></i>Week 5: October 2 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#todays-topic-bootstraping"><i class="fa fa-check"></i>Today’s Topic: Bootstraping</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#example-1-bootstrapping-a-mean"><i class="fa fa-check"></i>Example #1: Bootstrapping a Mean</a></li>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#example-2-bootstrapping-a-regression-slope"><i class="fa fa-check"></i>Example #2: Bootstrapping a Regression Slope</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html"><i class="fa fa-check"></i>Week 6: October 9 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#get-data"><i class="fa fa-check"></i>Get Data</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#run-descrptives"><i class="fa fa-check"></i>Run Descrptives</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#print-data-preview"><i class="fa fa-check"></i>Print Data Preview</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#summary-statistics"><i class="fa fa-check"></i>Summary Statistics</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#data-structure"><i class="fa fa-check"></i>Data Structure</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#histograms"><i class="fa fa-check"></i>Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#check-correlations"><i class="fa fa-check"></i>Check Correlations</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#split-the-data"><i class="fa fa-check"></i>Split the Data</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#model-training"><i class="fa fa-check"></i>Model Training</a></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#remake-the-models-with-net_rev-as-the-dv"><i class="fa fa-check"></i>Remake the models with net_rev as the DV</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-october-16-2025.html"><a href="week-7-october-16-2025.html"><i class="fa fa-check"></i>Week 7: October 16 2025</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html"><i class="fa fa-check"></i>Week 8: October 23 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#penguins-pca-analysis"><i class="fa fa-check"></i>Penguins PCA Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#exploratory-data-analysis"><i class="fa fa-check"></i>Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#standardize-variables"><i class="fa fa-check"></i>Standardize Variables</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#make-correlation-matrix"><i class="fa fa-check"></i>Make correlation matrix:</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#run-pca"><i class="fa fa-check"></i>Run PCA</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#choose-how-many-pcs-to-retain"><i class="fa fa-check"></i>Choose How Many PCs to Retain</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#assess-loadings"><i class="fa fa-check"></i>Assess Loadings</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#plot-the-raw-data-in-pc-space"><i class="fa fa-check"></i>Plot the Raw Data in PC Space</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#summary-of-analyses"><i class="fa fa-check"></i>Summary of Analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html"><i class="fa fa-check"></i>Week 9: November 6 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#exploratory-data-analysis-1"><i class="fa fa-check"></i>Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#explore-predictors"><i class="fa fa-check"></i>Explore Predictors</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#simple-scatterplot"><i class="fa fa-check"></i>Simple Scatterplot</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compute-simple-regression"><i class="fa fa-check"></i>Compute Simple Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#multiple-regression-1"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compare-non-linear-regression"><i class="fa fa-check"></i>Compare Non-Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#quadratic-model"><i class="fa fa-check"></i>Quadratic Model</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#multiple-regression-with-a-polynomial"><i class="fa fa-check"></i>Multiple Regression with a Polynomial</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#bootstrap-the-estimates"><i class="fa fa-check"></i>Bootstrap the Estimates</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#principal-component-analysis"><i class="fa fa-check"></i>Principal Component Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#explore-via-histograms"><i class="fa fa-check"></i>Explore via Histograms</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#correlation-matrix"><i class="fa fa-check"></i>Correlation Matrix</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compute-pca"><i class="fa fa-check"></i>Compute PCA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html"><i class="fa fa-check"></i>Week 10: November 13 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#overview"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#load-data"><i class="fa fa-check"></i>Load Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#base-r-vs.-tidyverse"><i class="fa fa-check"></i>Base R vs. Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#favorite-tidyverse-functions"><i class="fa fa-check"></i>Favorite Tidyverse Functions</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#select-some-rows"><i class="fa fa-check"></i>Select Some Rows</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#group-the-data"><i class="fa fa-check"></i>Group the Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#choose-rows-based-on-a-factor"><i class="fa fa-check"></i>Choose Rows Based on a Factor</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#arrange-the-data"><i class="fa fa-check"></i>Arrange the Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#selecting-some-columns"><i class="fa fa-check"></i>Selecting Some Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#generating-new-columns"><i class="fa fa-check"></i>Generating New columns</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#select-distinct-instances"><i class="fa fa-check"></i>Select Distinct instances</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#rename-columns"><i class="fa fa-check"></i>Rename Columns</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#rearranging-columns"><i class="fa fa-check"></i>Rearranging columns</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#write-off-a-.csv-file"><i class="fa fa-check"></i>Write Off a .csv File</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#see-more-of-less-of-the-data-preview"><i class="fa fa-check"></i>See More of Less of the Data Preview</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#randomly-sample-from-the-data"><i class="fa fa-check"></i>Randomly Sample From The Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#compute-quick-descriptive-stats"><i class="fa fa-check"></i>Compute Quick Descriptive Stats</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#generate-new-categorical-columns"><i class="fa fa-check"></i>Generate New Categorical Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#data-viz"><i class="fa fa-check"></i>Data viz</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#violin-plot"><i class="fa fa-check"></i>Violin Plot</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#bar-chart"><i class="fa fa-check"></i>Bar Chart</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#boxplot"><i class="fa fa-check"></i>Boxplot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-11-november-20-2025.html"><a href="week-11-november-20-2025.html"><i class="fa fa-check"></i>Week 11: November 20 2025</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INF2167: R For Data Science – In Class Coding Demonstrations</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-9-november-6-2025" class="section level1 unnumbered hasAnchor">
+<h1>Week 9: November 6 2025<a href="week-9-november-6-2025.html#week-9-november-6-2025" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="exploratory-data-analysis-1" class="section level2 unnumbered hasAnchor">
+<h2>Exploratory Data Analysis<a href="week-9-november-6-2025.html#exploratory-data-analysis-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>diamonds</code> dataset comes with ggplot 2. it contains measurements of ~54000 diamonds.</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="week-9-november-6-2025.html#cb148-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb148-2"><a href="week-9-november-6-2025.html#cb148-2" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb148-3"><a href="week-9-november-6-2025.html#cb148-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> diamonds</span></code></pre></div>
+<p>We have a column for <strong>price</strong>. This will be our key dependent variable that we want to understand.</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="week-9-november-6-2025.html#cb149-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb149-2"><a href="week-9-november-6-2025.html#cb149-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
+<span id="cb149-3"><a href="week-9-november-6-2025.html#cb149-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb149-4"><a href="week-9-november-6-2025.html#cb149-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb149-5"><a href="week-9-november-6-2025.html#cb149-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb149-6"><a href="week-9-november-6-2025.html#cb149-6" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb149-7"><a href="week-9-november-6-2025.html#cb149-7" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Price (USD)&quot;</span>,</span>
+<span id="cb149-8"><a href="week-9-november-6-2025.html#cb149-8" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of Diamonds&quot;</span></span>
+<span id="cb149-9"><a href="week-9-november-6-2025.html#cb149-9" tabindex="-1"></a>  )</span>
+<span id="cb149-10"><a href="week-9-november-6-2025.html#cb149-10" tabindex="-1"></a></span>
+<span id="cb149-11"><a href="week-9-november-6-2025.html#cb149-11" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/Price_hist.png&quot;</span>, <span class="at">height =</span> <span class="dv">3</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb149-12"><a href="week-9-november-6-2025.html#cb149-12" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/Price_hist.png&quot;</span>)</span></code></pre></div>
+<p><img src="Figs/Price_hist.png" width="750" /></p>
+<ul>
+<li><p>Right-skewed distribution</p></li>
+<li><p>Most diamonds cost &lt; 5000 USD, and some diamonds cost a lot more, up to about 20000 USD.</p></li>
+</ul>
+</div>
+<div id="explore-predictors" class="section level2 unnumbered hasAnchor">
+<h2>Explore Predictors<a href="week-9-november-6-2025.html#explore-predictors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="week-9-november-6-2025.html#cb150-1" tabindex="-1"></a>b <span class="ot">&lt;-</span> diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb150-2"><a href="week-9-november-6-2025.html#cb150-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat)) <span class="sc">+</span></span>
+<span id="cb150-3"><a href="week-9-november-6-2025.html#cb150-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb150-4"><a href="week-9-november-6-2025.html#cb150-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb150-5"><a href="week-9-november-6-2025.html#cb150-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb150-6"><a href="week-9-november-6-2025.html#cb150-6" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb150-7"><a href="week-9-november-6-2025.html#cb150-7" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Carat&quot;</span>,</span>
+<span id="cb150-8"><a href="week-9-november-6-2025.html#cb150-8" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of Diamonds&quot;</span></span>
+<span id="cb150-9"><a href="week-9-november-6-2025.html#cb150-9" tabindex="-1"></a>  )</span>
+<span id="cb150-10"><a href="week-9-november-6-2025.html#cb150-10" tabindex="-1"></a></span>
+<span id="cb150-11"><a href="week-9-november-6-2025.html#cb150-11" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/Carat_hist.png&quot;</span>, <span class="at">height =</span> <span class="dv">3</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb150-12"><a href="week-9-november-6-2025.html#cb150-12" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/Carat_hist.png&quot;</span>)</span></code></pre></div>
+<p><img src="Figs/Carat_hist.png" width="750" /></p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="week-9-november-6-2025.html#cb151-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb151-2"><a href="week-9-november-6-2025.html#cb151-2" tabindex="-1"></a>  <span class="fu">group_by</span>(color) <span class="sc">%&gt;%</span></span>
+<span id="cb151-3"><a href="week-9-november-6-2025.html#cb151-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb151-4"><a href="week-9-november-6-2025.html#cb151-4" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb151-5"><a href="week-9-november-6-2025.html#cb151-5" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 7 × 2
+##   color     n
+##   &lt;ord&gt; &lt;int&gt;
+## 1 D      6775
+## 2 E      9797
+## 3 F      9542
+## 4 G     11292
+## 5 H      8304
+## 6 I      5422
+## 7 J      2808</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="week-9-november-6-2025.html#cb153-1" tabindex="-1"></a>c <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb153-2"><a href="week-9-november-6-2025.html#cb153-2" tabindex="-1"></a>  <span class="fu">group_by</span>(color) <span class="sc">%&gt;%</span></span>
+<span id="cb153-3"><a href="week-9-november-6-2025.html#cb153-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb153-4"><a href="week-9-november-6-2025.html#cb153-4" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb153-5"><a href="week-9-november-6-2025.html#cb153-5" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb153-6"><a href="week-9-november-6-2025.html#cb153-6" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> color, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb153-7"><a href="week-9-november-6-2025.html#cb153-7" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb153-8"><a href="week-9-november-6-2025.html#cb153-8" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb153-9"><a href="week-9-november-6-2025.html#cb153-9" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb153-10"><a href="week-9-november-6-2025.html#cb153-10" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb153-11"><a href="week-9-november-6-2025.html#cb153-11" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Color&quot;</span>,</span>
+<span id="cb153-12"><a href="week-9-november-6-2025.html#cb153-12" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of Diamonds&quot;</span></span>
+<span id="cb153-13"><a href="week-9-november-6-2025.html#cb153-13" tabindex="-1"></a>  )</span>
+<span id="cb153-14"><a href="week-9-november-6-2025.html#cb153-14" tabindex="-1"></a></span>
+<span id="cb153-15"><a href="week-9-november-6-2025.html#cb153-15" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/Color_hist.png&quot;</span>, <span class="at">height =</span> <span class="dv">3</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb153-16"><a href="week-9-november-6-2025.html#cb153-16" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/Color_hist.png&quot;</span>)</span></code></pre></div>
+<p><img src="Figs/Color_hist.png" width="750" /></p>
+</div>
+<div id="simple-scatterplot" class="section level2 unnumbered hasAnchor">
+<h2>Simple Scatterplot<a href="week-9-november-6-2025.html#simple-scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I’m going to choose <code>carat</code> as my predictor to start with, because I suspect that this will be closely related to the price.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="week-9-november-6-2025.html#cb154-1" tabindex="-1"></a>d <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb154-2"><a href="week-9-november-6-2025.html#cb154-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb154-3"><a href="week-9-november-6-2025.html#cb154-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb154-4"><a href="week-9-november-6-2025.html#cb154-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> F, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb154-5"><a href="week-9-november-6-2025.html#cb154-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb154-6"><a href="week-9-november-6-2025.html#cb154-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb154-7"><a href="week-9-november-6-2025.html#cb154-7" tabindex="-1"></a></span>
+<span id="cb154-8"><a href="week-9-november-6-2025.html#cb154-8" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/carat_price.png&quot;</span>, <span class="at">height =</span> <span class="dv">3</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb154-9"><a href="week-9-november-6-2025.html#cb154-9" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/carat_price.png&quot;</span>)</span></code></pre></div>
+<p><img src="Figs/carat_price.png" width="750" /></p>
+</div>
+<div id="compute-simple-regression" class="section level2 unnumbered hasAnchor">
+<h2>Compute Simple Regression<a href="week-9-november-6-2025.html#compute-simple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There is a clear relationship between carat and price: larger diamonds are more expensive. Let’s start by making a simple regression modeling the relationship between size and price.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="week-9-november-6-2025.html#cb155-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb155-2"><a href="week-9-november-6-2025.html#cb155-2" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">lm</span>(price <span class="sc">~</span> carat, <span class="at">data =</span> data)</span>
+<span id="cb155-3"><a href="week-9-november-6-2025.html#cb155-3" tabindex="-1"></a><span class="fu">summary</span>(res)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = price ~ carat, data = data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -18585.3   -804.8    -18.9    537.4  12731.7 
+## 
+## Coefficients:
+##             Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept) -2256.36      13.06  -172.8 &lt;0.0000000000000002 ***
+## carat        7756.43      14.07   551.4 &lt;0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1549 on 53938 degrees of freedom
+## Multiple R-squared:  0.8493, Adjusted R-squared:  0.8493 
+## F-statistic: 3.041e+05 on 1 and 53938 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<ul>
+<li><p>Carat accounts for 85% of variability in price (<span class="math inline">\(R^2\)</span> = 0.85).</p></li>
+<li><p>A 1-carat increase in diamond weight is associated with a $7756-dollar increase in price.</p></li>
+</ul>
+</div>
+<div id="multiple-regression-1" class="section level2 unnumbered hasAnchor">
+<h2>Multiple Regression<a href="week-9-november-6-2025.html#multiple-regression-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Try adding additional predictors in with <code>carat</code> to investigate whether they provide additional explantory power.</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="week-9-november-6-2025.html#cb157-1" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 10
+##   carat cut       color clarity depth table price     x     y     z
+##   &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+## 2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+## 3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+## 4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+## 5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+## 6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48</code></pre>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="week-9-november-6-2025.html#cb159-1" tabindex="-1"></a>res_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(price <span class="sc">~</span> carat <span class="sc">+</span> clarity <span class="sc">+</span> cut <span class="sc">+</span> color, <span class="at">data =</span> data)</span>
+<span id="cb159-2"><a href="week-9-november-6-2025.html#cb159-2" tabindex="-1"></a><span class="fu">summary</span>(res_2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = price ~ carat + clarity + cut + color, data = data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -16813.5   -680.4   -197.6    466.4  10394.9 
+## 
+## Coefficients:
+##              Estimate Std. Error  t value             Pr(&gt;|t|)    
+## (Intercept) -3710.603     13.980 -265.414 &lt; 0.0000000000000002 ***
+## carat        8886.129     12.034  738.437 &lt; 0.0000000000000002 ***
+## clarity.L    4217.535     30.831  136.794 &lt; 0.0000000000000002 ***
+## clarity.Q   -1832.406     28.827  -63.565 &lt; 0.0000000000000002 ***
+## clarity.C     923.273     24.679   37.411 &lt; 0.0000000000000002 ***
+## clarity^4    -361.995     19.739  -18.339 &lt; 0.0000000000000002 ***
+## clarity^5     216.616     16.109   13.447 &lt; 0.0000000000000002 ***
+## clarity^6       2.105     14.037    0.150                0.881    
+## clarity^7     110.340     12.383    8.910 &lt; 0.0000000000000002 ***
+## cut.L         698.907     20.335   34.369 &lt; 0.0000000000000002 ***
+## cut.Q        -327.686     17.911  -18.295 &lt; 0.0000000000000002 ***
+## cut.C         180.565     15.557   11.607 &lt; 0.0000000000000002 ***
+## cut^4          -1.207     12.458   -0.097                0.923    
+## color.L     -1910.288     17.712 -107.853 &lt; 0.0000000000000002 ***
+## color.Q      -627.954     16.121  -38.952 &lt; 0.0000000000000002 ***
+## color.C      -171.960     15.070  -11.410 &lt; 0.0000000000000002 ***
+## color^4        21.678     13.840    1.566                0.117    
+## color^5       -85.943     13.076   -6.572        0.00000000005 ***
+## color^6       -49.986     11.889   -4.205        0.00002620629 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1157 on 53921 degrees of freedom
+## Multiple R-squared:  0.9159, Adjusted R-squared:  0.9159 
+## F-statistic: 3.264e+04 on 18 and 53921 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<ul>
+<li><p>Adding <code>clarity</code>, <code>color</code>, and <code>cut</code> into the model increases the <span class="math inline">\(R^2\)</span> value to 0.91.</p></li>
+<li><p>This is 6% more variance accounted for than when we modeled only carat as the predictor.</p></li>
+</ul>
+<blockquote>
+<p>But is that 6% improvement a significant improvement???????</p>
+</blockquote>
+<p>Let’s formally test:</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="week-9-november-6-2025.html#cb161-1" tabindex="-1"></a><span class="fu">anova</span>(res, res_2)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: price ~ carat
+## Model 2: price ~ carat + clarity + cut + color
+##   Res.Df          RSS Df   Sum of Sq      F                Pr(&gt;F)    
+## 1  53938 129345695398                                                
+## 2  53921  72162776162 17 57182919236 2513.4 &lt; 0.00000000000000022 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<ul>
+<li>My second model is significantly better at capturing variance in <code>price</code> than the first model.</li>
+</ul>
+</div>
+<div id="compare-non-linear-regression" class="section level2 unnumbered hasAnchor">
+<h2>Compare Non-Linear Regression<a href="week-9-november-6-2025.html#compare-non-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="week-9-november-6-2025.html#cb163-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb163-2"><a href="week-9-november-6-2025.html#cb163-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb163-3"><a href="week-9-november-6-2025.html#cb163-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb163-4"><a href="week-9-november-6-2025.html#cb163-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">span =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
+<ul>
+<li>Appears to be a non-linear relationship between carat and price.</li>
+</ul>
+</div>
+<div id="quadratic-model" class="section level2 unnumbered hasAnchor">
+<h2>Quadratic Model<a href="week-9-november-6-2025.html#quadratic-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="week-9-november-6-2025.html#cb164-1" tabindex="-1"></a>res_3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(price <span class="sc">~</span> <span class="fu">poly</span>(carat, <span class="dv">2</span>), <span class="at">data =</span> data)</span>
+<span id="cb164-2"><a href="week-9-november-6-2025.html#cb164-2" tabindex="-1"></a><span class="fu">summary</span>(res_3)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = price ~ poly(carat, 2), data = data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -26350.0   -724.2    -35.9    445.8  12881.1 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept)       3932.800      6.631   593.1 &lt;0.0000000000000002 ***
+## poly(carat, 2)1 853889.595   1540.103   554.4 &lt;0.0000000000000002 ***
+## poly(carat, 2)2  37572.214   1540.103    24.4 &lt;0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1540 on 53937 degrees of freedom
+## Multiple R-squared:  0.851,  Adjusted R-squared:  0.851 
+## F-statistic: 1.54e+05 on 2 and 53937 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<ul>
+<li>Similar to the linear model above, the polynomial base model can account for 85% of variance in diamond price.</li>
+</ul>
+<p>Let’s compare the simple polynomial model to the simple regression model:</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="week-9-november-6-2025.html#cb166-1" tabindex="-1"></a><span class="fu">anova</span>(res, res_3)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: price ~ carat
+## Model 2: price ~ poly(carat, 2)
+##   Res.Df          RSS Df  Sum of Sq      F                Pr(&gt;F)    
+## 1  53938 129345695398                                               
+## 2  53937 127934024108  1 1411671290 595.16 &lt; 0.00000000000000022 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<ul>
+<li>The model that involved a polynomial was significantly better at capturing variance in the price of the diamonds.</li>
+</ul>
+</div>
+<div id="multiple-regression-with-a-polynomial" class="section level2 unnumbered hasAnchor">
+<h2>Multiple Regression with a Polynomial<a href="week-9-november-6-2025.html#multiple-regression-with-a-polynomial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="week-9-november-6-2025.html#cb168-1" tabindex="-1"></a>res_4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(price <span class="sc">~</span> <span class="fu">poly</span>(carat, <span class="dv">2</span>) <span class="sc">+</span> cut <span class="sc">+</span> color <span class="sc">+</span> clarity, <span class="at">data =</span> data)</span>
+<span id="cb168-2"><a href="week-9-november-6-2025.html#cb168-2" tabindex="-1"></a><span class="fu">summary</span>(res_4)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = price ~ poly(carat, 2) + cut + color + clarity, 
+##     data = data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -22942.8   -640.0   -187.3    416.4  10566.1 
+## 
+## Coefficients:
+##                   Estimate Std. Error  t value             Pr(&gt;|t|)    
+## (Intercept)       3362.045      9.488  354.345 &lt; 0.0000000000000002 ***
+## poly(carat, 2)1 977442.847   1317.069  742.135 &lt; 0.0000000000000002 ***
+## poly(carat, 2)2  30198.755   1171.539   25.777 &lt; 0.0000000000000002 ***
+## cut.L              680.759     20.223   33.662 &lt; 0.0000000000000002 ***
+## cut.Q             -329.741     17.802  -18.523 &lt; 0.0000000000000002 ***
+## cut.C              184.461     15.462   11.930 &lt; 0.0000000000000002 ***
+## cut^4               -1.062     12.382   -0.086               0.9317    
+## color.L          -1932.034     17.624 -109.624 &lt; 0.0000000000000002 ***
+## color.Q           -657.281     16.063  -40.919 &lt; 0.0000000000000002 ***
+## color.C           -172.049     14.979  -11.486 &lt; 0.0000000000000002 ***
+## color^4             31.405     13.761    2.282               0.0225 *  
+## color^5            -90.364     12.998   -6.952     0.00000000000364 ***
+## color^6            -47.807     11.816   -4.046     0.00005222452368 ***
+## clarity.L         4191.370     30.660  136.704 &lt; 0.0000000000000002 ***
+## clarity.Q        -1897.378     28.762  -65.968 &lt; 0.0000000000000002 ***
+## clarity.C          966.831     24.587   39.323 &lt; 0.0000000000000002 ***
+## clarity^4         -374.152     19.624  -19.066 &lt; 0.0000000000000002 ***
+## clarity^5          231.114     16.021   14.426 &lt; 0.0000000000000002 ***
+## clarity^6            2.080     13.951    0.149               0.8815    
+## clarity^7          103.122     12.311    8.376 &lt; 0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1150 on 53920 degrees of freedom
+## Multiple R-squared:  0.917,  Adjusted R-squared:  0.9169 
+## F-statistic: 3.134e+04 on 19 and 53920 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="week-9-november-6-2025.html#cb170-1" tabindex="-1"></a><span class="fu">anova</span>(res_2, res_4)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: price ~ carat + clarity + cut + color
+## Model 2: price ~ poly(carat, 2) + cut + color + clarity
+##   Res.Df         RSS Df Sum of Sq      F                Pr(&gt;F)    
+## 1  53921 72162776162                                              
+## 2  53920 71284343343  1 878432819 664.45 &lt; 0.00000000000000022 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<ul>
+<li>The multiple regression including the polynomial term for <code>carat</code> is significantly better at capturing variance in price than the strictly linear multiple regression model from above.</li>
+</ul>
+</div>
+<div id="bootstrap-the-estimates" class="section level2 unnumbered hasAnchor">
+<h2>Bootstrap the Estimates<a href="week-9-november-6-2025.html#bootstrap-the-estimates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="week-9-november-6-2025.html#cb172-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">994</span>)</span>
+<span id="cb172-2"><a href="week-9-november-6-2025.html#cb172-2" tabindex="-1"></a></span>
+<span id="cb172-3"><a href="week-9-november-6-2025.html#cb172-3" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="dv">1000</span> </span>
+<span id="cb172-4"><a href="week-9-november-6-2025.html#cb172-4" tabindex="-1"></a>boot_coeffs <span class="ot">&lt;-</span> <span class="fu">replicate</span>(B, {</span>
+<span id="cb172-5"><a href="week-9-november-6-2025.html#cb172-5" tabindex="-1"></a>  idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">nrow</span>(data), <span class="at">replace =</span> T)</span>
+<span id="cb172-6"><a href="week-9-november-6-2025.html#cb172-6" tabindex="-1"></a>  <span class="fu">coef</span>(<span class="fu">lm</span>(price <span class="sc">~</span> carat, <span class="at">data =</span> data[idx, ]))[<span class="dv">2</span>]</span>
+<span id="cb172-7"><a href="week-9-november-6-2025.html#cb172-7" tabindex="-1"></a>})</span>
+<span id="cb172-8"><a href="week-9-november-6-2025.html#cb172-8" tabindex="-1"></a></span>
+<span id="cb172-9"><a href="week-9-november-6-2025.html#cb172-9" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(boot_coeffs), <span class="fu">aes</span>(boot_coeffs)) <span class="sc">+</span></span>
+<span id="cb172-10"><a href="week-9-november-6-2025.html#cb172-10" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb172-11"><a href="week-9-november-6-2025.html#cb172-11" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb172-12"><a href="week-9-november-6-2025.html#cb172-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
+<ul>
+<li><p>The distribution of slopes is tightly centered around 7750, which is close to the original slope estimate.</p></li>
+<li><p>There is not much range in the estimated slopes (min ~ 7500, max ~ 7800)</p></li>
+<li><p>This reinforces the conclusion from the simple regression: <code>carat</code> is a strong, robust predictor of <code>price</code>.</p></li>
+</ul>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="week-9-november-6-2025.html#cb173-1" tabindex="-1"></a><span class="fu">quantile</span>(boot_coeffs, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</span></code></pre></div>
+<pre><code>##     2.5%    97.5% 
+## 7705.957 7801.569</code></pre>
+<ul>
+<li>95% of the bootstrapped slopes are between 7705 and 7801.</li>
+</ul>
+</div>
+<div id="principal-component-analysis" class="section level2 unnumbered hasAnchor">
+<h2>Principal Component Analysis<a href="week-9-november-6-2025.html#principal-component-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I will follow the same steps that we used for the <code>penguins</code> dataset analysis on Oct 23rd.</p>
+</div>
+<div id="explore-via-histograms" class="section level2 unnumbered hasAnchor">
+<h2>Explore via Histograms<a href="week-9-november-6-2025.html#explore-via-histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="week-9-november-6-2025.html#cb175-1" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code></pre></div>
+<pre><code>##      carat               cut        color        clarity          depth      
+##  Min.   :0.2000   Fair     : 1610   D: 6775   SI1    :13065   Min.   :43.00  
+##  1st Qu.:0.4000   Good     : 4906   E: 9797   VS2    :12258   1st Qu.:61.00  
+##  Median :0.7000   Very Good:12082   F: 9542   SI2    : 9194   Median :61.80  
+##  Mean   :0.7979   Premium  :13791   G:11292   VS1    : 8171   Mean   :61.75  
+##  3rd Qu.:1.0400   Ideal    :21551   H: 8304   VVS2   : 5066   3rd Qu.:62.50  
+##  Max.   :5.0100                     I: 5422   VVS1   : 3655   Max.   :79.00  
+##                                     J: 2808   (Other): 2531                  
+##      table           price             x                y         
+##  Min.   :43.00   Min.   :  326   Min.   : 0.000   Min.   : 0.000  
+##  1st Qu.:56.00   1st Qu.:  950   1st Qu.: 4.710   1st Qu.: 4.720  
+##  Median :57.00   Median : 2401   Median : 5.700   Median : 5.710  
+##  Mean   :57.46   Mean   : 3933   Mean   : 5.731   Mean   : 5.735  
+##  3rd Qu.:59.00   3rd Qu.: 5324   3rd Qu.: 6.540   3rd Qu.: 6.540  
+##  Max.   :95.00   Max.   :18823   Max.   :10.740   Max.   :58.900  
+##                                                                   
+##        z         
+##  Min.   : 0.000  
+##  1st Qu.: 2.910  
+##  Median : 3.530  
+##  Mean   : 3.539  
+##  3rd Qu.: 4.040  
+##  Max.   :31.800  
+## </code></pre>
+<ul>
+<li>The varaibles are measured on different scales, we need to match them in order to run PCA.</li>
+</ul>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="week-9-november-6-2025.html#cb177-1" tabindex="-1"></a><span class="co"># Select only the numberic columns</span></span>
+<span id="cb177-2"><a href="week-9-november-6-2025.html#cb177-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb177-3"><a href="week-9-november-6-2025.html#cb177-3" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(carat, price, depth, table, x, y, z))</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="week-9-november-6-2025.html#cb178-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">scale</span>(a)</span></code></pre></div>
+</div>
+<div id="correlation-matrix" class="section level2 unnumbered hasAnchor">
+<h2>Correlation Matrix<a href="week-9-november-6-2025.html#correlation-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="week-9-november-6-2025.html#cb179-1" tabindex="-1"></a><span class="fu">cor</span>(a) <span class="sc">%&gt;%</span></span>
+<span id="cb179-2"><a href="week-9-november-6-2025.html#cb179-2" tabindex="-1"></a>  <span class="fu">melt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb179-3"><a href="week-9-november-6-2025.html#cb179-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">round</span>(value,<span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb179-4"><a href="week-9-november-6-2025.html#cb179-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Var1, <span class="at">y =</span> Var2, <span class="at">fill =</span> value, <span class="at">label =</span> value)) <span class="sc">+</span></span>
+<span id="cb179-5"><a href="week-9-november-6-2025.html#cb179-5" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb179-6"><a href="week-9-november-6-2025.html#cb179-6" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">colour =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
+</div>
+<div id="compute-pca" class="section level2 unnumbered hasAnchor">
+<h2>Compute PCA<a href="week-9-november-6-2025.html#compute-pca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="week-9-november-6-2025.html#cb180-1" tabindex="-1"></a>pca_res <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(a)</span>
+<span id="cb180-2"><a href="week-9-november-6-2025.html#cb180-2" tabindex="-1"></a><span class="fu">summary</span>(pca_res)</span></code></pre></div>
+<pre><code>## Importance of components:
+##                           PC1    PC2     PC3     PC4     PC5     PC6     PC7
+## Standard deviation     2.1826 1.1340 0.83115 0.41684 0.20077 0.18151 0.11135
+## Proportion of Variance 0.6806 0.1837 0.09869 0.02482 0.00576 0.00471 0.00177
+## Cumulative Proportion  0.6806 0.8642 0.96294 0.98776 0.99352 0.99823 1.00000</code></pre>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="week-9-november-6-2025.html#cb182-1" tabindex="-1"></a><span class="fu">plot</span>(pca_res, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Scree Plot&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="week-9-november-6-2025.html#cb183-1" tabindex="-1"></a>loadings <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(pca_res<span class="sc">$</span>rotation, <span class="at">rownames =</span> <span class="st">&quot;variable&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="week-9-november-6-2025.html#cb184-1" tabindex="-1"></a>loadings <span class="sc">%&gt;%</span> </span>
+<span id="cb184-2"><a href="week-9-november-6-2025.html#cb184-2" tabindex="-1"></a>  <span class="fu">select</span>(variable, PC1) <span class="sc">%&gt;%</span> </span>
+<span id="cb184-3"><a href="week-9-november-6-2025.html#cb184-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="fu">abs</span>(PC1))) <span class="sc">%&gt;%</span> </span>
+<span id="cb184-4"><a href="week-9-november-6-2025.html#cb184-4" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">8</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 7 × 2
+##   variable       PC1
+##   &lt;chr&gt;        &lt;dbl&gt;
+## 1 x         0.453   
+## 2 carat     0.452   
+## 3 y         0.447   
+## 4 z         0.446   
+## 5 price     0.426   
+## 6 table     0.0995  
+## 7 depth    -0.000916</code></pre>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="week-9-november-6-2025.html#cb186-1" tabindex="-1"></a>loadings <span class="sc">%&gt;%</span> </span>
+<span id="cb186-2"><a href="week-9-november-6-2025.html#cb186-2" tabindex="-1"></a>  <span class="fu">select</span>(variable, PC2) <span class="sc">%&gt;%</span> </span>
+<span id="cb186-3"><a href="week-9-november-6-2025.html#cb186-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="fu">abs</span>(PC2))) <span class="sc">%&gt;%</span> </span>
+<span id="cb186-4"><a href="week-9-november-6-2025.html#cb186-4" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">8</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 7 × 2
+##   variable      PC2
+##   &lt;chr&gt;       &lt;dbl&gt;
+## 1 depth    -0.731  
+## 2 table     0.675  
+## 3 z        -0.0890 
+## 4 price    -0.0353 
+## 5 carat    -0.0347 
+## 6 x         0.00351
+## 7 y         0.00216</code></pre>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="week-9-november-6-2025.html#cb188-1" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(pca_res<span class="sc">$</span>x)</span>
+<span id="cb188-2"><a href="week-9-november-6-2025.html#cb188-2" tabindex="-1"></a></span>
+<span id="cb188-3"><a href="week-9-november-6-2025.html#cb188-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(scores, <span class="fu">aes</span>(PC1, PC2)) <span class="sc">+</span></span>
+<span id="cb188-4"><a href="week-9-november-6-2025.html#cb188-4" tabindex="-1"></a><span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb188-5"><a href="week-9-november-6-2025.html#cb188-5" tabindex="-1"></a></span>
+<span id="cb188-6"><a href="week-9-november-6-2025.html#cb188-6" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/large_ggplot.png&quot;</span>, <span class="at">height =</span> <span class="dv">9</span>, <span class="at">width =</span> <span class="dv">9</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-8-october-23-2025.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-10-november-13-2025.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/09-Nov6.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

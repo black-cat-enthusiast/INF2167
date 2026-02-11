@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Apply model_3 to the Test Data | INF2167: R For Data Science – In Class R Demos Fall 2025</title>
+  <meta name="description" content="<p>This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Apply model_3 to the Test Data | INF2167: R For Data Science – In Class R Demos Fall 2025" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Apply model_3 to the Test Data | INF2167: R For Data Science – In Class R Demos Fall 2025" />
+  
+  <meta name="twitter:description" content="<p>This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Jennet Baumbach" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-6-october-9-2025.html"/>
+<link rel="next" href="week-7-october-16-2025.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">INF2167 - Fall 2025</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html"><i class="fa fa-check"></i>Week 1: September 2 2025</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#level-2-header"><i class="fa fa-check"></i><b>0.1</b> Level 2 header</a>
+<ul>
+<li class="chapter" data-level="0.1.1" data-path="week-1-september-2-2025.html"><a href="week-1-september-2-2025.html#level-3-header"><i class="fa fa-check"></i><b>0.1.1</b> Level 3 header</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html"><i class="fa fa-check"></i>Week 2: September 11 2025</a>
+<ul>
+<li class="chapter" data-level="0.2" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#packages-in-r"><i class="fa fa-check"></i><b>0.2</b> Packages in R</a></li>
+<li class="chapter" data-level="0.3" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#generating-ficticous-data"><i class="fa fa-check"></i><b>0.3</b> Generating Ficticous Data</a></li>
+<li class="chapter" data-level="0.4" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#compute-correlations"><i class="fa fa-check"></i><b>0.4</b> Compute correlations</a>
+<ul>
+<li class="chapter" data-level="0.4.1" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#option-1-cor.test"><i class="fa fa-check"></i><b>0.4.1</b> Option #1: <code>cor.test</code></a></li>
+<li class="chapter" data-level="0.4.2" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#option-2-cor"><i class="fa fa-check"></i><b>0.4.2</b> Option #2: <code>cor()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="0.5" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#lets-make-a-graph"><i class="fa fa-check"></i><b>0.5</b> Let’s Make a Graph! :)</a></li>
+<li class="chapter" data-level="0.6" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#construct-a-linear-model"><i class="fa fa-check"></i><b>0.6</b> Construct a linear model</a></li>
+<li class="chapter" data-level="0.7" data-path="week-2-september-11-2025.html"><a href="week-2-september-11-2025.html#applying-these-processes-to-the-mt_cars-dataset"><i class="fa fa-check"></i><b>0.7</b> Applying these processes to the <code>mt_cars</code> dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html"><i class="fa fa-check"></i>Week 3: September 18 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#get-mtcars-data"><i class="fa fa-check"></i>Get mtcars Data</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#simple-regressions"><i class="fa fa-check"></i>Simple Regressions</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#multiple-regression"><i class="fa fa-check"></i>Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#control-for-other-variables"><i class="fa fa-check"></i>1. Control for other variables</a></li>
+<li class="chapter" data-level="" data-path="week-3-september-18-2025.html"><a href="week-3-september-18-2025.html#investigate-the-influence-of-moderators"><i class="fa fa-check"></i>2. Investigate the influence of moderators</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-september-25-2025.html"><a href="week-4-september-25-2025.html"><i class="fa fa-check"></i>Week 4: September 25 2025</a></li>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html"><i class="fa fa-check"></i>Week 5: October 2 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-october-2-2025.html"><a href="week-5-october-2-2025.html#bootstraping-a-mean"><i class="fa fa-check"></i>Bootstraping a Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html"><i class="fa fa-check"></i>Week 6: October 9 2025</a>
+<ul>
+<li class="chapter" data-level="0.8" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#get-data"><i class="fa fa-check"></i><b>0.8</b> Get Data</a></li>
+<li class="chapter" data-level="0.9" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#run-descrptives"><i class="fa fa-check"></i><b>0.9</b> Run Descrptives</a>
+<ul>
+<li class="chapter" data-level="0.9.1" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#print-data-preview"><i class="fa fa-check"></i><b>0.9.1</b> Print Data Preview</a></li>
+<li class="chapter" data-level="0.9.2" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#summary-statistics"><i class="fa fa-check"></i><b>0.9.2</b> Summary Statistics</a></li>
+<li class="chapter" data-level="0.9.3" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#data-structure"><i class="fa fa-check"></i><b>0.9.3</b> Data Structure</a></li>
+<li class="chapter" data-level="0.9.4" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#histograms"><i class="fa fa-check"></i><b>0.9.4</b> Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="0.10" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#check-correlations"><i class="fa fa-check"></i><b>0.10</b> Check Correlations</a></li>
+<li class="chapter" data-level="0.11" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#split-the-data"><i class="fa fa-check"></i><b>0.11</b> Split the Data</a></li>
+<li class="chapter" data-level="0.12" data-path="week-6-october-9-2025.html"><a href="week-6-october-9-2025.html#model-training"><i class="fa fa-check"></i><b>0.12</b> Model Training</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="apply-model_3-to-the-test-data.html"><a href="apply-model_3-to-the-test-data.html"><i class="fa fa-check"></i><b>1</b> Apply <code>model_3</code> to the Test Data</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="apply-model_3-to-the-test-data.html"><a href="apply-model_3-to-the-test-data.html#remake-the-models-with-net_rev-as-the-dv"><i class="fa fa-check"></i><b>1.1</b> Remake the models with net_rev as the DV</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-october-16-2025.html"><a href="week-7-october-16-2025.html"><i class="fa fa-check"></i>Week 7: October 16 2025</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html"><i class="fa fa-check"></i>Week 8: October 23 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#penguins-pca-analysis"><i class="fa fa-check"></i>Penguins PCA Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#exploratory-data-analysis"><i class="fa fa-check"></i>Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#standardize-variables"><i class="fa fa-check"></i>Standardize Variables</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#make-correlation-matrix"><i class="fa fa-check"></i>Make correlation matrix:</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#run-pca"><i class="fa fa-check"></i>Run PCA</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#choose-how-many-pcs-to-retain"><i class="fa fa-check"></i>Choose How Many PCs to Retain</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#assess-loadings"><i class="fa fa-check"></i>Assess Loadings</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#plot-the-raw-data-in-pc-space"><i class="fa fa-check"></i>Plot the Raw Data in PC Space</a></li>
+<li class="chapter" data-level="" data-path="week-8-october-23-2025.html"><a href="week-8-october-23-2025.html#summary-of-analyses"><i class="fa fa-check"></i>Summary of Analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html"><i class="fa fa-check"></i>Week 9: November 6 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#exploratory-data-analysis-1"><i class="fa fa-check"></i>Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#explore-predictors"><i class="fa fa-check"></i>Explore Predictors</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#simple-scatterplot"><i class="fa fa-check"></i>Simple Scatterplot</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compute-simple-regression"><i class="fa fa-check"></i>Compute Simple Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#multiple-regression-1"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compare-non-linear-regression"><i class="fa fa-check"></i>Compare Non-Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#quadratic-model"><i class="fa fa-check"></i>Quadratic Model</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#multiple-regression-with-a-polynomial"><i class="fa fa-check"></i>Multiple Regression with a Polynomial</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#bootstrap-the-estimates"><i class="fa fa-check"></i>Bootstrap the Estimates</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#principal-component-analysis"><i class="fa fa-check"></i>Principal Component Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#explore-via-histograms"><i class="fa fa-check"></i>Explore via Histograms</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#correlation-matrix"><i class="fa fa-check"></i>Correlation Matrix</a></li>
+<li class="chapter" data-level="" data-path="week-9-november-6-2025.html"><a href="week-9-november-6-2025.html#compute-pca"><i class="fa fa-check"></i>Compute PCA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html"><i class="fa fa-check"></i>Week 10: November 13 2025</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#overview"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#load-data"><i class="fa fa-check"></i>Load Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#base-r-vs.-tidyverse"><i class="fa fa-check"></i>Base R vs. Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#favorite-tidyverse-functions"><i class="fa fa-check"></i>Favorite Tidyverse Functions</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#select-some-rows"><i class="fa fa-check"></i>Select Some Rows</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#group-the-data"><i class="fa fa-check"></i>Group the Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#choose-rows-based-on-a-factor"><i class="fa fa-check"></i>Choose Rows Based on a Factor</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#arrange-the-data"><i class="fa fa-check"></i>Arrange the Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#selecting-some-columns"><i class="fa fa-check"></i>Selecting Some Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#generating-new-columns"><i class="fa fa-check"></i>Generating New columns</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#select-distinct-instances"><i class="fa fa-check"></i>Select Distinct instances</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#rename-columns"><i class="fa fa-check"></i>Rename Columns</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#rearranging-columns"><i class="fa fa-check"></i>Rearranging columns</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#write-off-a-.csv-file"><i class="fa fa-check"></i>Write Off a .csv File</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#see-more-of-less-of-the-data-preview"><i class="fa fa-check"></i>See More of Less of the Data Preview</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#randomly-sample-from-the-data"><i class="fa fa-check"></i>Randomly Sample From The Data</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#compute-quick-descriptive-stats"><i class="fa fa-check"></i>Compute Quick Descriptive Stats</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#generate-new-categorical-columns"><i class="fa fa-check"></i>Generate New Categorical Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#data-viz"><i class="fa fa-check"></i>Data viz</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#violin-plot"><i class="fa fa-check"></i>Violin Plot</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#bar-chart"><i class="fa fa-check"></i>Bar Chart</a></li>
+<li class="chapter" data-level="" data-path="week-10-november-13-2025.html"><a href="week-10-november-13-2025.html#boxplot"><i class="fa fa-check"></i>Boxplot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-11-november-20-2025.html"><a href="week-11-november-20-2025.html"><i class="fa fa-check"></i>Week 11: November 20 2025</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INF2167: R For Data Science – In Class R Demos Fall 2025</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="apply-model_3-to-the-test-data" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Apply <code>model_3</code> to the Test Data<a href="apply-model_3-to-the-test-data.html#apply-model_3-to-the-test-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In order to investigate how well <code>model_3</code> will perform on data that it has never seen before, we can superimpose it over the test data and investigate how well the line fits:</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="apply-model_3-to-the-test-data.html#cb115-1" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model_3, <span class="at">newdata =</span> test)</span></code></pre></div>
+<p>The key metric of model fit is the <span class="math inline">\(RMSE\)</span> (root mean squared error) which tells us the amount of <em>unexplained</em> variability:</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="apply-model_3-to-the-test-data.html#cb116-1" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>((test<span class="sc">$</span>sales <span class="sc">-</span> predictions)<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## [1] 127.142</code></pre>
+<ul>
+<li><p>Here, <span class="math inline">\(RMSE\)</span> = 127.14.</p></li>
+<li><p>To interpret the RMSE, we compare to the residual error that was leftover when that model was generated on the training dataset.</p></li>
+</ul>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="apply-model_3-to-the-test-data.html#cb118-1" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>(model_3<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## [1] 137.3101</code></pre>
+<ul>
+<li><p>In this case, the model actually performed a little better on the test data than it did during training!</p></li>
+<li><p>This is very strong evidence that the current model will perform well predicting future sales.</p></li>
+</ul>
+<div id="remake-the-models-with-net_rev-as-the-dv" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Remake the models with net_rev as the DV<a href="apply-model_3-to-the-test-data.html#remake-the-models-with-net_rev-as-the-dv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="apply-model_3-to-the-test-data.html#cb120-1" tabindex="-1"></a><span class="fu">head</span>(dat)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 9
+##   sales price marketing competitor_price traffic season dollars landed_cost
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;
+## 1   703  10.2      7.94             9.7     2898 Q1       7206.        2812
+## 2   547  11       10.4             10.5     2320 Q1       6017         2188
+## 3   678  11.4      9.53            11.2     2597 Q1       7736.        2712
+## 4   483  11.4      9.62            11       2341 Q1       5497.        1932
+## 5   721  11.0      5.44             9.21    2476 Q2       7967.        2884
+## 6   733  11.8     11.6             11.9     2748 Q4       8627.        2932
+## # ℹ 1 more variable: net_rev &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="apply-model_3-to-the-test-data.html#cb122-1" tabindex="-1"></a>cost_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(net_rev <span class="sc">~</span> traffic, <span class="at">data =</span> dat)</span>
+<span id="cb122-2"><a href="apply-model_3-to-the-test-data.html#cb122-2" tabindex="-1"></a><span class="fu">summary</span>(cost_model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = net_rev ~ traffic, data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2517.2  -689.5   -50.6   631.3  3739.6 
+## 
+## Coefficients:
+##              Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept) 1455.5291   321.1477   4.532           0.00000705 ***
+## traffic        1.3930     0.1239  11.242 &lt; 0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 988.4 on 598 degrees of freedom
+## Multiple R-squared:  0.1745, Adjusted R-squared:  0.1731 
+## F-statistic: 126.4 on 1 and 598 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="apply-model_3-to-the-test-data.html#cb124-1" tabindex="-1"></a>cost_model_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(net_rev <span class="sc">~</span> price <span class="sc">+</span> traffic <span class="sc">+</span> competitor_price, <span class="at">data =</span> dat)</span>
+<span id="cb124-2"><a href="apply-model_3-to-the-test-data.html#cb124-2" tabindex="-1"></a><span class="fu">summary</span>(cost_model_2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = net_rev ~ price + traffic + competitor_price, data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2492.8  -615.9   -38.3   577.4  3306.2 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept)      -953.6049   631.8273  -1.509               0.132    
+## price             -99.4490    61.6952  -1.612               0.108    
+## traffic             1.4113     0.1144  12.336 &lt;0.0000000000000002 ***
+## competitor_price  344.3674    36.8791   9.338 &lt;0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 912.2 on 596 degrees of freedom
+## Multiple R-squared:  0.2992, Adjusted R-squared:  0.2957 
+## F-statistic: 84.81 on 3 and 596 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="apply-model_3-to-the-test-data.html#cb126-1" tabindex="-1"></a>cost_model_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(net_rev <span class="sc">~</span> traffic <span class="sc">+</span> competitor_price <span class="sc">+</span> price, <span class="at">data =</span> dat)</span>
+<span id="cb126-2"><a href="apply-model_3-to-the-test-data.html#cb126-2" tabindex="-1"></a><span class="fu">summary</span>(cost_model_2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = net_rev ~ traffic + competitor_price + price, data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2492.8  -615.9   -38.3   577.4  3306.2 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept)      -953.6049   631.8273  -1.509               0.132    
+## traffic             1.4113     0.1144  12.336 &lt;0.0000000000000002 ***
+## competitor_price  344.3674    36.8791   9.338 &lt;0.0000000000000002 ***
+## price             -99.4490    61.6952  -1.612               0.108    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 912.2 on 596 degrees of freedom
+## Multiple R-squared:  0.2992, Adjusted R-squared:  0.2957 
+## F-statistic: 84.81 on 3 and 596 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<ul>
+<li><p>The effects of traffic and the other guy’s price remain significant even after controlling for our price point</p></li>
+<li><p>Our price point is not a significant unique predictor of revenue when controlling for the other factors in the model</p></li>
+</ul>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="apply-model_3-to-the-test-data.html#cb128-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb128-2"><a href="apply-model_3-to-the-test-data.html#cb128-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> traffic, <span class="at">y =</span> net_rev)) <span class="sc">+</span></span>
+<span id="cb128-3"><a href="apply-model_3-to-the-test-data.html#cb128-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb128-4"><a href="apply-model_3-to-the-test-data.html#cb128-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> F, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb128-5"><a href="apply-model_3-to-the-test-data.html#cb128-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb128-6"><a href="apply-model_3-to-the-test-data.html#cb128-6" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb128-7"><a href="apply-model_3-to-the-test-data.html#cb128-7" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Number of Hits&quot;</span>, </span>
+<span id="cb128-8"><a href="apply-model_3-to-the-test-data.html#cb128-8" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Weekly Net Revenue ($)&quot;</span></span>
+<span id="cb128-9"><a href="apply-model_3-to-the-test-data.html#cb128-9" tabindex="-1"></a>  )</span>
+<span id="cb128-10"><a href="apply-model_3-to-the-test-data.html#cb128-10" tabindex="-1"></a></span>
+<span id="cb128-11"><a href="apply-model_3-to-the-test-data.html#cb128-11" tabindex="-1"></a>b <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb128-12"><a href="apply-model_3-to-the-test-data.html#cb128-12" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> competitor_price, <span class="at">y =</span> net_rev)) <span class="sc">+</span></span>
+<span id="cb128-13"><a href="apply-model_3-to-the-test-data.html#cb128-13" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb128-14"><a href="apply-model_3-to-the-test-data.html#cb128-14" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> F, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb128-15"><a href="apply-model_3-to-the-test-data.html#cb128-15" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb128-16"><a href="apply-model_3-to-the-test-data.html#cb128-16" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb128-17"><a href="apply-model_3-to-the-test-data.html#cb128-17" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Competitor Price&quot;</span>, </span>
+<span id="cb128-18"><a href="apply-model_3-to-the-test-data.html#cb128-18" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Weekly Net Revenue ($)&quot;</span></span>
+<span id="cb128-19"><a href="apply-model_3-to-the-test-data.html#cb128-19" tabindex="-1"></a>  )</span>
+<span id="cb128-20"><a href="apply-model_3-to-the-test-data.html#cb128-20" tabindex="-1"></a></span>
+<span id="cb128-21"><a href="apply-model_3-to-the-test-data.html#cb128-21" tabindex="-1"></a>c <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb128-22"><a href="apply-model_3-to-the-test-data.html#cb128-22" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> competitor_price, <span class="at">y =</span> traffic)) <span class="sc">+</span></span>
+<span id="cb128-23"><a href="apply-model_3-to-the-test-data.html#cb128-23" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb128-24"><a href="apply-model_3-to-the-test-data.html#cb128-24" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> F, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb128-25"><a href="apply-model_3-to-the-test-data.html#cb128-25" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb128-26"><a href="apply-model_3-to-the-test-data.html#cb128-26" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb128-27"><a href="apply-model_3-to-the-test-data.html#cb128-27" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Competitor Price&quot;</span>, </span>
+<span id="cb128-28"><a href="apply-model_3-to-the-test-data.html#cb128-28" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of Hits&quot;</span></span>
+<span id="cb128-29"><a href="apply-model_3-to-the-test-data.html#cb128-29" tabindex="-1"></a>  )</span>
+<span id="cb128-30"><a href="apply-model_3-to-the-test-data.html#cb128-30" tabindex="-1"></a></span>
+<span id="cb128-31"><a href="apply-model_3-to-the-test-data.html#cb128-31" tabindex="-1"></a>panel <span class="ot">&lt;-</span> <span class="fu">ggarrange</span>(a,b,c,</span>
+<span id="cb128-32"><a href="apply-model_3-to-the-test-data.html#cb128-32" tabindex="-1"></a>          <span class="at">nrow =</span> <span class="dv">1</span>,</span>
+<span id="cb128-33"><a href="apply-model_3-to-the-test-data.html#cb128-33" tabindex="-1"></a>          <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>))</span>
+<span id="cb128-34"><a href="apply-model_3-to-the-test-data.html#cb128-34" tabindex="-1"></a></span>
+<span id="cb128-35"><a href="apply-model_3-to-the-test-data.html#cb128-35" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/panel.png&quot;</span>, <span class="at">height =</span> <span class="dv">3</span>, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb128-36"><a href="apply-model_3-to-the-test-data.html#cb128-36" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/panel.png&quot;</span>)</span></code></pre></div>
+<p><img src="Figs/panel.png" width="1200" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-6-october-9-2025.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-7-october-16-2025.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-Oct9.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
