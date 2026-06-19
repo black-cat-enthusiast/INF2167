@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jennet Baumbach, Ph.D">
 
-<title>INF2167: R For Data Science – In Class Coding Demonstrations</title>
+<title>Week 5: October 2 2025 – INF2167: R For Data Science – In Class Coding Demonstrations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-Sept4.html" rel="next">
+<link href="./06-Oct9.html" rel="next">
+<link href="./04-Sept25.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,10 +103,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -81,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">INF2167: R For Data Science – In Class Coding Demonstrations</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-Oct2.html">Week 5: October 2 2025</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -108,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">INF2167: R For Data Science – In Class Coding Demonstrations</span></span></a>
   </div>
 </li>
@@ -138,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-Oct2.html" class="sidebar-item-text sidebar-link">
+  <a href="./05-Oct2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 5: October 2 2025</span></a>
   </div>
 </li>
@@ -183,25 +246,31 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#todays-topic-bootstraping" id="toc-todays-topic-bootstraping" class="nav-link active" data-scroll-target="#todays-topic-bootstraping">Today’s Topic: Bootstraping</a>
+  <ul class="collapse">
+  <li><a href="#example-1-bootstrapping-a-mean" id="toc-example-1-bootstrapping-a-mean" class="nav-link" data-scroll-target="#example-1-bootstrapping-a-mean">Example #1: Bootstrapping a Mean</a></li>
+  <li><a href="#example-2-bootstrapping-a-regression-slope" id="toc-example-2-bootstrapping-a-regression-slope" class="nav-link" data-scroll-target="#example-2-bootstrapping-a-regression-slope">Example #2: Bootstrapping a Regression Slope</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">INF2167: R For Data Science – In Class Coding Demonstrations</h1>
+<h1 class="title">Week 5: October 2 2025</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jennet Baumbach, Ph.D </p>
-          </div>
-  </div>
     
   
     
@@ -212,10 +281,182 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025.</p>
-<p>All code was written by <strong>Jennet Baumbach, Ph.D</strong>. Questions about this code can be directed to jennetbaumbach@gmail.com.</p>
+<section id="todays-topic-bootstraping" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="todays-topic-bootstraping">Today’s Topic: Bootstraping</h2>
+<p>Bootstrapping is a resampling technique that allows us to test the <strong><em>robustness</em></strong> of a point estimate (such as a mean or a regression slope). The idea is that the dataset is “resampled”, usually around 5000 times <strong>with</strong> replacement. In this way, we treat the dataset as a population and repeatedly sample from it. The bootstrapped estimates. can then be treated as their own distribution. Bootstraping can either reinforce or refute the original point estimate.</p>
+<section id="example-1-bootstrapping-a-mean" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="example-1-bootstrapping-a-mean">Example #1: Bootstrapping a Mean</h3>
+<p>To demonstrate, I will simulate skewed data, look at the mean, then see the bootstrap distribution. Suppose that these data represent time to deliver pizzas from a pizza shop.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>) <span class="co"># For a reproducible example</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate skewed data</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">60</span>, <span class="dv">3</span>, <span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>This code generates a dataframe <code>x</code> that is right-skewed.</p></li>
+<li><p>Outliers can have a heavy influence on descriptive statistics such as the mean value.</p></li>
+</ul>
+<p>Today I will generate charts using <strong>Base R</strong> instead of ggplot. Base R charts are typically less visually pleasing than ggplots, and they are not as customizeable. However, base R charts are quick to produce and are useful to know about. Especially if you are exploring a dataset privately (i.e., not preparing a report for a stakeholder), it is sometimes preferable to be able to <strong><em>quickly</em></strong> create different visualizations.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x, <span class="at">main =</span> <span class="st">"Raw Data"</span>, <span class="at">xlab =</span> <span class="st">"Minutes to Deliver"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">mean</span>(x), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-Oct2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Figure 1</strong>. The distribution of delivery timees is right-skewed. Most deliveries take under 40 minutes, but a few take longer – up to 70 minutes – to complete. The vertical red line represents the mean delivery time of ~ 24 minutes.</p>
+<p>We can also ask R to calculate and print out the exact mean value:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24.19566</code></pre>
+</div>
+</div>
+<ul>
+<li>The average delivery takes 24.19 minutes to complete.</li>
+</ul>
+<p>Especially because the distribution of delivery times is right-skewed, we cannot comment on how <strong><em>robust</em></strong> the mean estimate is. Is it a good representation of the average delivery time? Or are the outlying times creating a skewed estimate? We can use bootstrapping to calculate a more robust estimate:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>boot_means <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">2000</span>, <span class="fu">mean</span>(<span class="fu">sample</span>(x, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>This code resamples the data <code>x</code> 2000 times with replacement.</p></li>
+<li><p>Each time the dataset is resampled, the mean delivery time is calculated.</p></li>
+<li><p>The bootstrapping process generates 2000 mean estimates based on the 2000 samples that were taken.</p></li>
+</ul>
+<p>We can then plot a histogram of the bootstrapped means to understand the shape of the bootstrapped distribution of estimates:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(boot_means, <span class="at">main =</span> <span class="st">"Bootstrap Distribution of the Mean Delivery Time"</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Bootstrapped Means"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">mean</span>(x), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-Oct2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Figure 2</strong>. Estimates of mean delivery time taken from 2000 samples. The red vertical line represents the mean delivery time from the original dataset.</p>
+<ul>
+<li><p>In this case, the distribution of bootstrapped means is centered around the original point estimate.</p></li>
+<li><p>Therefore, the bootstrapping procedure increases our confidence in the original point estimate.</p></li>
+</ul>
+</section>
+<section id="example-2-bootstrapping-a-regression-slope" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="example-2-bootstrapping-a-regression-slope">Example #2: Bootstrapping a Regression Slope</h3>
+<p>To demonstrate bootstrapping a regression coefficient, I will simulate a new set of fictitious data. The code to generate the data is set up to create a scenario where there is a positive linear relationship between <code>x</code> and <code>y</code>, but that linear relationship depends on a few outlying datapoints. The goal here is to showcase a scenario where bootstrapping does not increase our confidence in the originial point estimate.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reproducibility</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate two vectors: x and y to model</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rexp</span>(<span class="dv">40</span>, <span class="at">rate =</span> <span class="fl">0.1</span>), <span class="dv">50</span>, <span class="dv">60</span>)      <span class="co"># </span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">+</span> <span class="fl">0.5</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(x), <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">5</span> <span class="sc">+</span> <span class="fl">0.2</span><span class="sc">*</span>x)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit regression</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Print regression results</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-20.4208  -3.9460  -0.5488   3.8842  20.9524 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  5.15729    1.66402   3.099  0.00354 ** 
+x            0.49185    0.09637   5.104 8.51e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.882 on 40 degrees of freedom
+Multiple R-squared:  0.3944,    Adjusted R-squared:  0.3792 
+F-statistic: 26.05 on 1 and 40 DF,  p-value: 8.507e-06</code></pre>
+</div>
+</div>
+<ul>
+<li><p>There is a significant relationship between <code>x</code> and <code>y</code> in this example (p &lt; 0.001).</p></li>
+<li><p>A 1-unit increase in <code>x</code> is associated with a 0.49-unit increase in <code>y</code>.</p></li>
+<li><p>Variance in <code>x</code> accounts for 39% of variance in <code>y</code> (<span class="math inline">\(R^2\)</span> = 0.3944)</p></li>
+</ul>
+<p>As I’ve mentioned previously, a picture is always worth 1000 words in analytics, so let’s have a look at the scatterplot:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a Scatterplot</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">main =</span> <span class="st">"Skewed data with leverage points"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the Regression line</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-Oct2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Figure 3</strong>. Linear relationship between <code>x</code> and <code>y</code>. Note that there are a few outlying datapoints towards the right of the x-axis that seem to be influencing the upward slope of the regression line.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(fit)[<span class="st">"x"</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    2.5 %    97.5 % 
+0.2970743 0.6866348 </code></pre>
+</div>
+</div>
+<ul>
+<li>The 95% confidence interval around the slope estimate is [0.30, 0.69]. Based on these data, we would expect the slope of the line of best fit to fall between 0.3 and 0.69 95% of the time, if the sampling procedure were to be repeated.</li>
+</ul>
+<p>We might want to bootstrap the estimate to get a good idea of how <strong><em>robust</em></strong> the point estimate for the slope is.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>boot_slopes <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">2000</span>, <span class="fu">coef</span>(<span class="fu">lm</span>(y[<span class="fu">sample</span>(<span class="fu">length</span>(x), <span class="at">replace=</span><span class="cn">TRUE</span>)] <span class="sc">~</span> x[<span class="fu">sample</span>(<span class="fu">length</span>(x), <span class="at">replace=</span><span class="cn">TRUE</span>)]))[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>This code resamples the dataset 2000 times (with replacement) and computes the coefficient of the line of best fit between <code>x</code> and <code>y</code> each time.</p></li>
+<li><p>The result is a dataframe <code>boot_slopes</code> with 2000 estimates of the slope of the relationship between <code>x</code> and <code>y</code>.</p></li>
+</ul>
+<p>We can then visualize the distribution of bootstrapped slopes to see how closely they map on to the original estimate of the slope that we computed above.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(boot_slopes, <span class="at">breaks =</span> <span class="dv">30</span>, <span class="at">main =</span> <span class="st">"Bootstrap slopes"</span>, <span class="at">xlab =</span> <span class="st">"Slope"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">coef</span>(fit)[<span class="dv">2</span>], <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-Oct2_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Figure 4</strong>. Distribution of bootstrapped slopes taken from 2000 samples. The red vertical line represents the original slope that we computed from the data above (<span class="math inline">\(\beta\)</span> = 0.49).</p>
+<ul>
+<li><p>The bootstrapped distribution of slopes is centered around 0.</p></li>
+<li><p>A slope of zero in a regression model indicates a flat horizontal line of best fit (i.e., no linear relationship between <code>x</code> and <code>y</code>).</p></li>
+<li><p>Here, the bootstrapping procedure has indicated that our original point estimate <strong><em>is not</em></strong> robust.</p></li>
+</ul>
+<p>We could also use the <code>quantile</code> command from base R to find the boundaries of where 95% of the bootstrapped slopes fall.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(boot_slopes, <span class="fu">c</span>(.<span class="dv">025</span>, .<span class="dv">975</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      2.5%      97.5% 
+-0.2309303  0.3038000 </code></pre>
+</div>
+</div>
+<ul>
+<li><p>95% of the bootstrapped slopes fall between -0.23 and 0.30.</p></li>
+<li><p>This further emphasizes that the relationship between <code>x</code> and <code>y</code> is not robust in our dataset.</p></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -640,10 +881,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./04-Sept25.html" class="pagination-link" aria-label="Week 4: September 25 2025">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 4: September 25 2025</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-Sept4.html" class="pagination-link" aria-label="Week 1: September 2 2025">
-        <span class="nav-page-text">Week 1: September 2 2025</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06-Oct9.html" class="pagination-link" aria-label="Week 6: October 9 2025">
+        <span class="nav-page-text">Week 6: October 9 2025</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

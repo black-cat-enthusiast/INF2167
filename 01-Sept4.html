@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jennet Baumbach, Ph.D">
 
-<title>INF2167: R For Data Science – In Class Coding Demonstrations</title>
+<title>Week 1: September 2 2025 – INF2167: R For Data Science – In Class Coding Demonstrations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-Sept4.html" rel="next">
+<link href="./02-Sept11.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,10 +103,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -81,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">INF2167: R For Data Science – In Class Coding Demonstrations</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-Sept4.html">Week 1: September 2 2025</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -108,13 +171,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">INF2167: R For Data Science – In Class Coding Demonstrations</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-Sept4.html" class="sidebar-item-text sidebar-link">
+  <a href="./01-Sept4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 1: September 2 2025</span></a>
   </div>
 </li>
@@ -183,25 +246,37 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#intro-to-markdown" id="toc-intro-to-markdown" class="nav-link active" data-scroll-target="#intro-to-markdown">Intro to Markdown</a></li>
+  <li><a href="#two-hashtags-makes-a-level-2-header" id="toc-two-hashtags-makes-a-level-2-header" class="nav-link" data-scroll-target="#two-hashtags-makes-a-level-2-header">Two Hashtags Makes a Level 2 header</a>
+  <ul class="collapse">
+  <li><a href="#three-hashtags-makes-a-level-3-header" id="toc-three-hashtags-makes-a-level-3-header" class="nav-link" data-scroll-target="#three-hashtags-makes-a-level-3-header">Three Hashtags Makes a Level 3 header</a></li>
+  </ul></li>
+  <li><a href="#intro-to-using-r-code" id="toc-intro-to-using-r-code" class="nav-link" data-scroll-target="#intro-to-using-r-code">Intro to Using R Code</a>
+  <ul class="collapse">
+  <li><a href="#object-oriented-programming" id="toc-object-oriented-programming" class="nav-link" data-scroll-target="#object-oriented-programming">Object Oriented Programming</a></li>
+  <li><a href="#lists-of-values-vectors" id="toc-lists-of-values-vectors" class="nav-link" data-scroll-target="#lists-of-values-vectors">Lists of Values (Vectors)</a></li>
+  <li><a href="#functions-in-r" id="toc-functions-in-r" class="nav-link" data-scroll-target="#functions-in-r">Functions in R</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">INF2167: R For Data Science – In Class Coding Demonstrations</h1>
+<h1 class="title">Week 1: September 2 2025</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jennet Baumbach, Ph.D </p>
-          </div>
-  </div>
     
   
     
@@ -212,10 +287,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This repository contains code written during in-class coding sessions for the class INF2167: R For Data Science in Fall 2025.</p>
-<p>All code was written by <strong>Jennet Baumbach, Ph.D</strong>. Questions about this code can be directed to jennetbaumbach@gmail.com.</p>
+<section id="intro-to-markdown" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="intro-to-markdown">Intro to Markdown</h2>
+<p>Rmarkdown is an end-to-end document creation tool. The main advantage of using this workflow is the ability to generate <strong>reproducible output files</strong>. The key benefit of working in this fashion is that you can integrate code, statistical analyses, charts, and written interpretations into a single document.</p>
+<p>You can organize an Rmarkdown document using headings and subheadings, which are written using hashtags:</p>
+</section>
+<section id="two-hashtags-makes-a-level-2-header" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="two-hashtags-makes-a-level-2-header">Two Hashtags Makes a Level 2 header</h2>
+<section id="three-hashtags-makes-a-level-3-header" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="three-hashtags-makes-a-level-3-header">Three Hashtags Makes a Level 3 header</h3>
+<p>You can also add emphasis to written sections by bolding and / or italicizing key words.</p>
+<ul>
+<li><p>Write single asterisks on each side of text to make <em>italics</em>.</p></li>
+<li><p>Wrap text with double asterisks to make text <strong>bold</strong>.</p></li>
+<li><p>Triple asterisks on each side will make the text <strong><em>both italic and bold</em></strong>.</p></li>
+</ul>
+</section>
+</section>
+<section id="intro-to-using-r-code" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="intro-to-using-r-code">Intro to Using R Code</h2>
+<p>Using markdown code (as described above) goes <em>outside</em> of code blocks. All R code must be written <strong><em>inside</em></strong> of code blocks. You can generate a code block by pressing <code>control</code> + <code>shift</code> + <code>i</code> on your keyboard (or <code>command</code> + <code>option</code> + <code>i</code> if you’re using a mac) to generate a code block.</p>
+<p>When we enter a math equation with no assignment it will print out the result:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> <span class="sc">*</span> <span class="dv">4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 48</code></pre>
+</div>
+</div>
+<ul>
+<li>So R can be used as a badass calculator.</li>
+</ul>
+<section id="object-oriented-programming" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="object-oriented-programming">Object Oriented Programming</h3>
+<p>Although computing calculations can be useful, we often want to save the results of computational processes so that they can be used in subsequent analysis steps. Instead of just writing code “in line” (as shown above), we can <strong>assign</strong> the results of a computational process onto an <strong>object</strong> in the working environment. Use the arrow (<code>&lt;-</code>) to assign a new object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">12</span> <span class="sc">*</span> <span class="dv">4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>The results of this process are now assigned onto the object <code>a</code>.</p></li>
+<li><p>We can then call back the object <code>a</code> to use it in subsequent computational steps.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 144</code></pre>
+</div>
+</div>
+<ul>
+<li>Here, R will print out 48 * 3</li>
+</ul>
+<p>We could also assign the results of <code>a</code> * 3 onto another object in the environment:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> a <span class="sc">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>One thing to watch out for when working with object-oriented programming is that objects can be overwritten. R will not give any warning to let you know when something is overwritten.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R will overwrite with no warning! Watch out!</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> b <span class="sc">*</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Now the object <code>a</code> will be the value 6912.</li>
+</ul>
+</section>
+<section id="lists-of-values-vectors" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="lists-of-values-vectors">Lists of Values (Vectors)</h3>
+<p>We often work with ordered lists of values, not just single values as I showed above. In R, we can assign lists of values onto objects in the environment as well. In order to write an ordered list of values, we an use the function <code>c()</code> which means “concatenate” (a.k.a. “combine”). We then <strong>pass</strong> the list of values separated by commas inside the parentheses.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>   , <span class="dv">5</span>, <span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>R language does not care about spaces or line breaks.</p></li>
+<li><p>You should use spacing to help organize your code and to increase readability.</p></li>
+</ul>
+</section>
+<section id="functions-in-r" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="functions-in-r">Functions in R</h3>
+<p>Most of the time when using R, you will want to structure your work using <strong>functions</strong>, rather than just writing out mathematical equations. Functions in R follow a simple syntax:</p>
+<p><span class="math display">\[
+do\; this (to\; that, \; with \; specifications)
+\]</span></p>
+<ul>
+<li><p>The “verb” goes before the parentheses and specifies a mathematical process that should be carried out.</p></li>
+<li><p>The “noun” goes inside the brackets, telling R what the verb should be applied to.</p></li>
+</ul>
+<p><strong>Example</strong>: we can use the <code>data.frame</code> function to assign multiple lists of values onto an object in the environment. This allows us to store data in a 2-dimensional space where there are multiple rows and multiple columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">110</span>, <span class="dv">98</span>, <span class="dv">75</span>, <span class="dv">65</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Ideally, data should be organized as <strong><em>one subject one row</em></strong>.</p></li>
+<li><p>Most of the time when working in analytics / data science, you will work with data frames.</p></li>
+</ul>
+<p>We could also pass our data frame to other functions. For example, we could pass our object <code>d</code> to the <code>tail()</code> function, which would print out the last six rows of data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(d, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ID Score
+4  4    98
+5  5    75
+6  6    65</code></pre>
+</div>
+</div>
+<ul>
+<li>Since I added ,3 inside the brackets, we only see the last three rows of data printed out.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -640,10 +822,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="INF2167: R For Data Science -- In Class Coding Demonstrations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">INF2167: R For Data Science – In Class Coding Demonstrations</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-Sept4.html" class="pagination-link" aria-label="Week 1: September 2 2025">
-        <span class="nav-page-text">Week 1: September 2 2025</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02-Sept11.html" class="pagination-link" aria-label="Week 2: September 11 2025">
+        <span class="nav-page-text">Week 2: September 11 2025</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
